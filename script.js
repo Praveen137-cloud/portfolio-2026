@@ -1,6 +1,6 @@
 /**
  * Praveen Kumar R - Developer Portfolio
- * Interactive Scripts & Modern Logic
+ * Interactive Scripts & Multi-Theme Engine
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
-  initTheme();
+  initThemeEngine();
   initParticleCanvas();
   initTypewriter();
   initMobileNav();
@@ -20,39 +20,115 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. Theme Toggle (Dark / Light Mode)
+   1. Multi-Theme Engine (5 Curated Aesthetics)
    ========================================================================== */
-function initTheme() {
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-  const html = document.documentElement;
+const THEMES = [
+  { id: 'cyber', name: 'Obsidian Cyber', desc: 'Dark AI & Neon Cyan', dot: '#06b6d4' },
+  { id: 'editorial', name: 'Editorial Studio', desc: 'HuyML / Gallery Cream & Ink', dot: '#111827' },
+  { id: 'midnight', name: 'Midnight Tokyo', desc: 'Synthwave Violet & Fuchsia', dot: '#a855f7' },
+  { id: 'emerald', name: 'Emerald Terminal', desc: 'Matrix Cyber & Hacker Green', dot: '#10b981' },
+  { id: 'titanium', name: 'Titanium Noir', desc: 'Minimalist Apple / Linear Dark', dot: '#e4e4e7' }
+];
 
-  // Check saved theme preference or system preference
-  const savedTheme = localStorage.getItem('praveen-portfolio-theme');
-  if (savedTheme === 'light') {
-    html.classList.add('light');
-    updateThemeIcons(true);
-  } else {
-    html.classList.remove('light');
-    updateThemeIcons(false);
+let currentTheme = 'cyber';
+
+function initThemeEngine() {
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const themeDropdown = document.getElementById('theme-dropdown');
+  const themeOptionsContainer = document.getElementById('theme-options-list');
+  const mobileThemeOptions = document.getElementById('mobile-theme-options');
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem('praveen-portfolio-theme') || 'cyber';
+  applyTheme(savedTheme, false);
+
+  // Render Theme Options in Dropdown
+  if (themeOptionsContainer) {
+    themeOptionsContainer.innerHTML = '';
+    THEMES.forEach(theme => {
+      const btn = document.createElement('button');
+      btn.className = `theme-option-btn flex items-center justify-between w-full p-2.5 rounded-xl transition-all ${theme.id === currentTheme ? 'active' : ''}`;
+      btn.setAttribute('data-theme-id', theme.id);
+      btn.innerHTML = `
+        <div class="flex items-center gap-2.5 text-left">
+          <span class="w-3.5 h-3.5 rounded-full border border-white/20 shrink-0" style="background-color: ${theme.dot}"></span>
+          <div>
+            <div class="text-xs font-bold leading-tight">${theme.name}</div>
+            <div class="text-[10px] text-slate-400 opacity-80 leading-tight">${theme.desc}</div>
+          </div>
+        </div>
+        <span class="check-icon text-xs text-cyan-400 font-bold ${theme.id === currentTheme ? '' : 'hidden'}">✓</span>
+      `;
+      btn.addEventListener('click', () => {
+        applyTheme(theme.id, true);
+        if (themeDropdown) themeDropdown.classList.add('hidden');
+      });
+      themeOptionsContainer.appendChild(btn);
+    });
   }
 
-  function toggleTheme() {
-    html.classList.toggle('light');
-    const isLight = html.classList.contains('light');
-    localStorage.setItem('praveen-portfolio-theme', isLight ? 'light' : 'dark');
-    updateThemeIcons(isLight);
+  // Mobile Theme Options
+  if (mobileThemeOptions) {
+    mobileThemeOptions.innerHTML = '';
+    THEMES.forEach(theme => {
+      const btn = document.createElement('button');
+      btn.className = `px-3 py-1.5 rounded-lg text-xs font-medium border border-white/10 flex items-center gap-1.5 ${theme.id === currentTheme ? 'bg-cyan-500/20 text-cyan-400 border-cyan-500/40' : 'text-slate-300'}`;
+      btn.setAttribute('data-theme-mobile', theme.id);
+      btn.innerHTML = `<span class="w-2.5 h-2.5 rounded-full" style="background-color: ${theme.dot}"></span> ${theme.name.split(' ')[0]}`;
+      btn.addEventListener('click', () => {
+        applyTheme(theme.id, true);
+      });
+      mobileThemeOptions.appendChild(btn);
+    });
   }
 
-  if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
-  if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+  // Toggle Dropdown Visibility
+  if (themeToggleBtn && themeDropdown) {
+    themeToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      themeDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!themeDropdown.contains(e.target) && e.target !== themeToggleBtn) {
+        themeDropdown.classList.add('hidden');
+      }
+    });
+  }
 }
 
-function updateThemeIcons(isLight) {
-  const sunIcons = document.querySelectorAll('.theme-icon-sun');
-  const moonIcons = document.querySelectorAll('.theme-icon-moon');
-  sunIcons.forEach(icon => icon.classList.toggle('hidden', !isLight));
-  moonIcons.forEach(icon => icon.classList.toggle('hidden', isLight));
+function applyTheme(themeId, notify = true) {
+  currentTheme = themeId;
+  const html = document.documentElement;
+  html.setAttribute('data-theme', themeId);
+  localStorage.setItem('praveen-portfolio-theme', themeId);
+
+  // Update checkmarks in desktop dropdown
+  document.querySelectorAll('.theme-option-btn').forEach(btn => {
+    const isTarget = btn.getAttribute('data-theme-id') === themeId;
+    btn.classList.toggle('active', isTarget);
+    const check = btn.querySelector('.check-icon');
+    if (check) check.classList.toggle('hidden', !isTarget);
+  });
+
+  // Update mobile buttons
+  document.querySelectorAll('[data-theme-mobile]').forEach(btn => {
+    const isTarget = btn.getAttribute('data-theme-mobile') === themeId;
+    btn.classList.toggle('bg-cyan-500/20', isTarget);
+    btn.classList.toggle('text-cyan-400', isTarget);
+    btn.classList.toggle('border-cyan-500/40', isTarget);
+    btn.classList.toggle('text-slate-300', !isTarget);
+  });
+
+  const activeThemeObj = THEMES.find(t => t.id === themeId);
+  if (notify && activeThemeObj) {
+    showToast(`Switched theme: ${activeThemeObj.name}`);
+  }
+
+  // Re-sync canvas particle colors
+  if (window.updateCanvasColors) {
+    window.updateCanvasColors();
+  }
 }
 
 /* ==========================================================================
@@ -86,6 +162,22 @@ function initParticleCanvas() {
   const particleCount = Math.min(Math.floor(window.innerWidth / 18), 70);
   const particles = [];
 
+  function getThemeColors() {
+    const style = getComputedStyle(document.documentElement);
+    const c1 = style.getPropertyValue('--canvas-c1').trim() || '#06b6d4';
+    const c2 = style.getPropertyValue('--canvas-c2').trim() || '#8b5cf6';
+    return [c1, c2];
+  }
+
+  let [color1, color2] = getThemeColors();
+
+  window.updateCanvasColors = () => {
+    [color1, color2] = getThemeColors();
+    particles.forEach(p => {
+      p.color = Math.random() > 0.5 ? color1 : color2;
+    });
+  };
+
   class Particle {
     constructor() {
       this.x = Math.random() * width;
@@ -93,7 +185,7 @@ function initParticleCanvas() {
       this.vx = (Math.random() - 0.5) * 0.7;
       this.vy = (Math.random() - 0.5) * 0.7;
       this.radius = Math.random() * 2 + 1;
-      this.color = Math.random() > 0.5 ? '#06b6d4' : '#8b5cf6';
+      this.color = Math.random() > 0.5 ? color1 : color2;
     }
 
     update() {
@@ -144,7 +236,7 @@ function initParticleCanvas() {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(6, 182, 212, ${0.18 * (1 - dist / 110)})`;
+          ctx.strokeStyle = `rgba(100, 116, 139, ${0.18 * (1 - dist / 110)})`;
           ctx.lineWidth = 0.8;
           ctx.stroke();
         }
@@ -539,7 +631,7 @@ function initTerminal() {
       // Append user command
       const cmdDiv = document.createElement('div');
       cmdDiv.className = 'mt-3 text-xs font-mono';
-      cmdDiv.innerHTML = `<span class="text-cyan-400 font-bold">guest@praveen-dev</span>:<span class="text-purple-400">~</span>$ <span class="text-white">${escapeHtml(rawCmd)}</span>`;
+      cmdDiv.innerHTML = `<span class="text-cyan-400 font-bold">guest@praveen</span>:<span class="text-purple-400">~</span>$ <span class="text-white">${escapeHtml(rawCmd)}</span>`;
       body.appendChild(cmdDiv);
 
       // Append response
@@ -571,7 +663,6 @@ function escapeHtml(str) {
    7. Contact & Toast Notifications
    ========================================================================== */
 function initContactActions() {
-  // One-click copy email
   const copyBtn = document.getElementById('copy-email-btn');
   const heroCopyBtn = document.getElementById('hero-copy-email');
 
@@ -598,7 +689,6 @@ function initContactActions() {
       const subject = document.getElementById('contact-subject').value || 'Portfolio Contact';
       const message = document.getElementById('contact-message').value;
 
-      // Construct mailto
       const mailtoUrl = `mailto:praveenkumar63811@gmail.com?subject=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent(message + '\n\nSender Email: ' + email)}`;
 
       triggerConfetti();

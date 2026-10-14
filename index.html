@@ -77,7 +77,7 @@
         </div>
         <div>
           <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-cyan-400 transition-colors">
-            Praveen<span class="text-cyan-400">.dev</span>
+            Praveen
           </span>
           <span class="block text-[10px] font-mono text-slate-400 tracking-wider uppercase">Full-Stack &amp; AI</span>
         </div>
@@ -98,11 +98,24 @@
 
       <!-- Right Header Actions -->
       <div class="hidden sm:flex items-center gap-3">
-        <!-- Theme Toggle -->
-        <button id="theme-toggle" aria-label="Toggle theme" class="p-2.5 rounded-xl border border-white/10 bg-white/5 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 transition-all">
-          <i data-lucide="sun" class="w-4 h-4 theme-icon-sun hidden"></i>
-          <i data-lucide="moon" class="w-4 h-4 theme-icon-moon"></i>
-        </button>
+        <!-- Theme Palette Dropdown -->
+        <div class="relative">
+          <button id="theme-toggle-btn" aria-label="Select theme palette" class="flex items-center gap-2 px-3 py-2 rounded-xl border border-white/10 bg-white/5 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 text-xs font-semibold transition-all">
+            <i data-lucide="palette" class="w-4 h-4 text-cyan-400"></i>
+            <span class="hidden lg:inline">Theme</span>
+            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+          </button>
+
+          <!-- Theme Dropdown Menu -->
+          <div id="theme-dropdown" class="theme-dropdown hidden">
+            <div class="px-2 py-1.5 text-[10px] font-mono text-slate-400 uppercase tracking-wider border-b border-white/10 mb-1">
+              Select Theme Palette
+            </div>
+            <div id="theme-options-list" class="space-y-1">
+              <!-- Dynamically populated by script.js -->
+            </div>
+          </div>
+        </div>
 
         <!-- Resume Download Button -->
         <a href="praveen-resume.pdf" target="_blank" download="Praveen_Kumar_Resume.pdf" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all">
@@ -113,10 +126,6 @@
 
       <!-- Mobile Hamburger Button -->
       <div class="flex items-center gap-2 md:hidden">
-        <button id="theme-toggle-mobile" aria-label="Toggle theme" class="p-2 rounded-lg border border-white/10 text-slate-300">
-          <i data-lucide="sun" class="w-4 h-4 theme-icon-sun hidden"></i>
-          <i data-lucide="moon" class="w-4 h-4 theme-icon-moon"></i>
-        </button>
         <button id="mobile-menu-btn" aria-label="Open mobile menu" class="p-2 rounded-lg border border-white/10 text-slate-300 hover:text-white">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
@@ -133,7 +142,18 @@
       <a href="#certifications" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Certifications</a>
       <a href="#terminal" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Interactive CLI</a>
       <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Contact</a>
-      <div class="pt-3">
+      
+      <!-- Mobile Theme Palette Selector -->
+      <div class="pt-3 pb-2 border-t border-white/10">
+        <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider px-3 mb-2 flex items-center gap-1.5">
+          <i data-lucide="palette" class="w-3.5 h-3.5 text-cyan-400"></i> Theme Palette:
+        </div>
+        <div id="mobile-theme-options" class="flex flex-wrap gap-1.5 px-3">
+          <!-- Populated by script.js -->
+        </div>
+      </div>
+
+      <div class="pt-2">
         <a href="praveen-resume.pdf" target="_blank" download="Praveen_Kumar_Resume.pdf" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm">
           <i data-lucide="file-down" class="w-4 h-4"></i> Download Resume (PDF)
         </a>
@@ -233,7 +253,7 @@
             <!-- Profile Image Frame -->
             <div class="relative rounded-3xl overflow-hidden p-1.5 bg-gradient-to-br from-cyan-400 via-indigo-500 to-purple-600 shadow-2xl">
               <div class="relative rounded-[22px] overflow-hidden bg-slate-950 aspect-[3/4]">
-                <img src="assets/praveen-profile.jpg" alt="Praveen Kumar R" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700">
+                <img src="assets/praveen-profile.jpg" alt="Praveen Kumar R" class="w-full h-full object-cover object-[center_65%] hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
 
                 <!-- Bottom Photo Label -->
@@ -625,6 +645,22 @@
                 <p class="text-xs text-slate-400 mt-1">Autonomous SEO Audit &amp; AI Strategy Platform</p>
               </div>
 
+              <!-- Case Study Specs (HuyML / Bison Studio Style) -->
+              <div class="grid grid-cols-3 gap-2 py-2 px-3 rounded-xl bg-white/[0.04] border border-white/5 text-[10px] font-mono">
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">ROLE</span>
+                  <span class="text-white font-semibold">AI Engineer</span>
+                </div>
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">YEAR</span>
+                  <span class="text-white font-semibold">2026</span>
+                </div>
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">CONTEXT</span>
+                  <span class="text-cyan-400 font-semibold truncate block">Aram Analytics</span>
+                </div>
+              </div>
+
               <p class="text-slate-300 text-xs sm:text-sm line-clamp-3 leading-relaxed">
                 Engineered an AI-powered technical SEO diagnostic platform featuring automated multi-page site crawling, 0–100 scoring engine, automated PDF audit report generation, Groq Cloud API LLM recommendations, and a Manifest V3 Chrome Extension.
               </p>
@@ -695,6 +731,22 @@
                   Pico
                 </h3>
                 <p class="text-xs text-slate-400 mt-1">Gamified DSA Learning Sandbox &amp; AI Tutor</p>
+              </div>
+
+              <!-- Case Study Specs (HuyML / Bison Studio Style) -->
+              <div class="grid grid-cols-3 gap-2 py-2 px-3 rounded-xl bg-white/[0.04] border border-white/5 text-[10px] font-mono">
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">ROLE</span>
+                  <span class="text-white font-semibold">Full-Stack Dev</span>
+                </div>
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">YEAR</span>
+                  <span class="text-white font-semibold">2026</span>
+                </div>
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">CONTEXT</span>
+                  <span class="text-purple-400 font-semibold truncate block">Gamified EdTech</span>
+                </div>
               </div>
 
               <p class="text-slate-300 text-xs sm:text-sm line-clamp-3 leading-relaxed">
@@ -768,6 +820,22 @@
                   Scam Hunter AI
                 </h3>
                 <p class="text-xs text-slate-400 mt-1">Autonomous Digital Scam &amp; Threat Detection</p>
+              </div>
+
+              <!-- Case Study Specs (HuyML / Bison Studio Style) -->
+              <div class="grid grid-cols-3 gap-2 py-2 px-3 rounded-xl bg-white/[0.04] border border-white/5 text-[10px] font-mono">
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">ROLE</span>
+                  <span class="text-white font-semibold">AI &amp; Cyber Dev</span>
+                </div>
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">YEAR</span>
+                  <span class="text-white font-semibold">2026</span>
+                </div>
+                <div>
+                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">CONTEXT</span>
+                  <span class="text-rose-400 font-semibold truncate block">Threat Forensics</span>
+                </div>
               </div>
 
               <p class="text-slate-300 text-xs sm:text-sm line-clamp-3 leading-relaxed">
@@ -846,7 +914,7 @@
             <span class="terminal-dot bg-[#ff5f56]"></span>
             <span class="terminal-dot bg-[#ffbd2e]"></span>
             <span class="terminal-dot bg-[#27c93f]"></span>
-            <span class="text-xs font-mono text-slate-400 ml-2">bash — praveen-dev-os ~ 80x24</span>
+            <span class="text-xs font-mono text-slate-400 ml-2">bash — praveen-os ~ 80x24</span>
           </div>
           <div class="text-[10px] font-mono text-slate-400 hidden sm:block">
             UTF-8 | Node v24 | React 19
@@ -871,7 +939,7 @@
 
         <!-- Terminal Input Line -->
         <div class="px-5 py-3 border-t border-white/10 bg-black/40 flex items-center gap-2">
-          <span class="text-cyan-400 font-mono font-bold text-xs sm:text-sm">guest@praveen-dev</span>
+          <span class="text-cyan-400 font-mono font-bold text-xs sm:text-sm">guest@praveen</span>
           <span class="text-purple-400 font-mono text-xs sm:text-sm">:~$&nbsp;</span>
           <input type="text" id="terminal-input" placeholder="type 'help' or 'sudo hire' and hit Enter..." class="flex-1 bg-transparent border-none outline-none font-mono text-xs sm:text-sm text-white placeholder:text-slate-600" autocomplete="off" spellcheck="false">
         </div>
@@ -1345,7 +1413,7 @@
       
       <div class="text-center sm:text-left space-y-1">
         <a href="#" class="font-display font-bold text-lg text-white">
-          Praveen<span class="text-cyan-400">.dev</span>
+          Praveen
         </a>
         <p class="text-xs text-slate-400">
           Crafted with React 19, FastAPI, Groq LLM &amp; Modern Tailwind UI.
