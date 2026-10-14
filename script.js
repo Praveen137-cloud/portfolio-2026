@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initSmoothScroll();
   initProjectCarousel();
+  initSkillCards();
 });
 
 /* ==========================================================================
@@ -171,19 +172,20 @@ function initSmoothScroll() {
 }
 
 /* ==========================================================================
-   4. Projects Horizontal Carousel Controls
+   4. Projects Horizontal Carousel Controls & Mobile Counter
    ========================================================================== */
 function initProjectCarousel() {
   const carousel = document.getElementById('projects-carousel');
   const prevBtn = document.getElementById('project-prev-btn');
   const nextBtn = document.getElementById('project-next-btn');
+  const counterEl = document.getElementById('mobile-project-counter');
 
   if (!carousel) return;
 
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       carousel.scrollBy({
-        left: -window.innerWidth,
+        left: -carousel.clientWidth,
         behavior: 'smooth'
       });
     });
@@ -192,10 +194,46 @@ function initProjectCarousel() {
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       carousel.scrollBy({
-        left: window.innerWidth,
+        left: carousel.clientWidth,
         behavior: 'smooth'
       });
     });
   }
+
+  if (counterEl) {
+    let scrollTimeout;
+    carousel.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const slideWidth = carousel.clientWidth || window.innerWidth;
+        const currentIdx = Math.min(6, Math.max(1, Math.round(carousel.scrollLeft / slideWidth) + 1));
+        counterEl.textContent = `${currentIdx} / 6`;
+      }, 50);
+    }, { passive: true });
+  }
 }
+
+/* ==========================================================================
+   5. Mobile Skill Cards Tap to Reveal Proficiency
+   ========================================================================== */
+function initSkillCards() {
+  const skillCards = document.querySelectorAll('.skill-card');
+  skillCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      const isActive = card.classList.contains('active');
+      skillCards.forEach(c => c.classList.remove('active'));
+      if (!isActive) {
+        card.classList.add('active');
+      }
+    });
+  });
+
+  // Close active overlay on tapping outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.skill-card')) {
+      skillCards.forEach(c => c.classList.remove('active'));
+    }
+  });
+}
+
 

@@ -42,6 +42,7 @@ html, body {
 /* Scroll snap container */
 .snap-container {
   height: 100vh;
+  height: 100dvh;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
@@ -52,12 +53,48 @@ html, body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
   position: relative;
+  overflow-x: hidden;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .snap-container {
+    scroll-snap-type: y proximity;
+  }
+  .snap-section {
+    min-height: 100dvh;
+    height: auto;
+    overflow-y: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+  }
+  #projects.snap-section {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    padding-top: 0 !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .contactInput {
+    font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
+    padding: 0.75rem 1rem !important;
+  }
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Mitchell Sparrow Hero Action Buttons */
 .heroButton {
-  padding: 0.6rem 1.4rem;
+  padding: 0.5rem 1.1rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 9999px;
   text-transform: uppercase;
@@ -145,7 +182,8 @@ html, body {
   font-size: 1.1rem;
 }
 
-.skill-card:hover .skill-overlay {
+.skill-card:hover .skill-overlay,
+.skill-card.active .skill-overlay {
   opacity: 1;
   transform: scale(1);
 }
