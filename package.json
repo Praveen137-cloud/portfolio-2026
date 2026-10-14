@@ -1,0 +1,21 @@
+{
+  "name": "praveen-kumar-portfolio",
+  "version": "2.0.0",
+  "description": "Personal developer portfolio of Praveen Kumar R - Full-Stack & AI Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "react19",
+    "fastapi",
+    "ai",
+    "groq",
+    "gemini"
+  ],
+  "author": "Praveen Kumar R",
+  "license": "MIT"
+}

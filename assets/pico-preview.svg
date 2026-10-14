@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="picoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="violetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#picoBgGrad)"/>
+
+  <!-- Code Grid Background -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <path d="M 0,60 L 800,60 M 0,120 L 800,120 M 0,180 L 800,180 M 0,240 L 800,240 M 0,300 L 800,300 M 0,360 L 800,360"/>
+    <path d="M 120,0 L 120,450 M 240,0 L 240,450 M 360,0 L 360,450 M 480,0 L 480,450 M 600,0 L 600,450 M 720,0 L 720,450"/>
+  </g>
+
+  <!-- Main Container Card -->
+  <rect x="50" y="45" width="700" height="360" rx="16" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(139, 92, 246, 0.35)" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect x="50" y="45" width="700" height="42" rx="16" fill="rgba(255, 255, 255, 0.03)"/>
+  <circle cx="75" cy="66" r="5" fill="#ef4444"/>
+  <circle cx="95" cy="66" r="5" fill="#eab308"/>
+  <circle cx="115" cy="66" r="5" fill="#22c55e"/>
+  <text x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="13" fill="#cbd5e1">Pico // Gamified DSA Sandbox &amp; Gemini AI Tutor</text>
+  
+  <!-- Live Rank Pulse Badge -->
+  <rect x="610" y="56" width="125" height="20" rx="10" fill="rgba(139, 92, 246, 0.15)" stroke="rgba(139, 92, 246, 0.4)"/>
+  <circle cx="622" cy="66" r="3" fill="#a855f7"/>
+  <text x="632" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#c084fc">SOCKET.IO LIVE</text>
+
+  <!-- Left: Monaco Code Editor Mockup -->
+  <g transform="translate(75, 105)">
+    <rect x="0" y="0" width="380" height="275" rx="10" fill="#030712" stroke="rgba(255,255,255,0.08)"/>
+    <!-- Editor Tab -->
+    <rect x="0" y="0" width="130" height="28" rx="8" fill="rgba(255,255,255,0.06)"/>
+    <text x="14" y="19" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8">solution.cpp</text>
+
+    <!-- Code Lines -->
+    <g transform="translate(14, 48)" font-family="'JetBrains Mono', monospace" font-size="11">
+      <text y="0" fill="#64748b">1  <tspan fill="#ec4899">vector</tspan>&lt;<tspan fill="#38bdf8">int</tspan>&gt; <tspan fill="#eab308">twoSum</tspan>(<tspan fill="#ec4899">vector</tspan>&lt;<tspan fill="#38bdf8">int</tspan>&gt;&amp; nums, <tspan fill="#38bdf8">int</tspan> target) {</text>
+      <text y="20" fill="#64748b">2    <tspan fill="#a855f7">unordered_map</tspan>&lt;<tspan fill="#38bdf8">int</tspan>, <tspan fill="#38bdf8">int</tspan>&gt; prevMap;</text>
+      <text y="40" fill="#64748b">3    <tspan fill="#3b82f6">for</tspan> (<tspan fill="#38bdf8">int</tspan> i = 0; i &lt; nums.<tspan fill="#10b981">size</tspan>(); i++) {</text>
+      <text y="60" fill="#64748b">4      <tspan fill="#38bdf8">int</tspan> diff = target - nums[i];</text>
+      <text y="80" fill="#64748b">5      <tspan fill="#3b82f6">if</tspan> (prevMap.<tspan fill="#10b981">count</tspan>(diff))</text>
+      <text y="100" fill="#64748b">6        <tspan fill="#3b82f6">return</tspan> {prevMap[diff], i};</text>
+      <text y="120" fill="#64748b">7      prevMap[nums[i]] = i;</text>
+      <text y="140" fill="#64748b">8    }</text>
+      <text y="160" fill="#64748b">9    <tspan fill="#3b82f6">return</tspan> {};</text>
+      <text y="180" fill="#64748b">10 }</text>
+    </g>
+
+    <!-- Test Passed Indicator -->
+    <rect x="14" y="235" width="350" height="28" rx="6" fill="rgba(16, 185, 129, 0.12)" stroke="rgba(16, 185, 129, 0.3)"/>
+    <text x="28" y="253" font-family="'JetBrains Mono', monospace" font-size="11" fill="#10b981">✓ All Test Cases Passed (Runtime: 4ms | O(N) Space)</text>
+  </g>
+
+  <!-- Right: Gemini AI Assistant & Live Rankings -->
+  <g transform="translate(475, 105)">
+    <!-- Gemini AI Box -->
+    <rect x="0" y="0" width="250" height="135" rx="10" fill="rgba(5, 8, 17, 0.7)" stroke="rgba(139, 92, 246, 0.3)"/>
+    <g transform="translate(14, 24)">
+      <circle cx="8" cy="8" r="8" fill="url(#violetGrad)"/>
+      <text x="24" y="12" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Gemini AI Tutor</text>
+      <text x="160" y="12" font-family="'JetBrains Mono', monospace" font-size="10" fill="#a855f7">Adaptive</text>
+    </g>
+    <rect x="14" y="44" width="222" height="75" rx="8" fill="rgba(255,255,255,0.03)"/>
+    <text x="24" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#94a3b8">"Optimal hash-map approach!</text>
+    <text x="24" y="82" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#94a3b8">Ready to test edge case with</text>
+    <text x="24" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#c084fc">duplicate values? +50 XP!"</text>
+
+    <!-- Live Leaderboard Box -->
+    <rect x="0" y="148" width="250" height="127" rx="10" fill="rgba(5, 8, 17, 0.7)" stroke="rgba(255, 255, 255, 0.08)"/>
+    <text x="14" y="172" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">🏆 Live Match Ranking</text>
+    <g transform="translate(14, 186)" font-family="'JetBrains Mono', monospace" font-size="11">
+      <text y="15" fill="#f59e0b">#1  Praveen (You)  ── 2,450 XP</text>
+      <text y="35" fill="#94a3b8">#2  Alex_99        ── 2,310 XP</text>
+      <text y="55" fill="#64748b">#3  CodeNinja      ── 2,190 XP</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Bar -->
+  <rect x="50" y="398" width="700" height="7" rx="3" fill="url(#violetGrad)"/>
+</svg>
