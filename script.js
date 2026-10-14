@@ -62,19 +62,54 @@ function initTypewriter() {
 }
 
 /* ==========================================================================
-   2. Contact Form & Actions
+   2. Contact Form & Actions (Direct Delivery + Gmail Web Fallback)
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('form-name').value;
-      const email = document.getElementById('form-email').value;
-      const subject = document.getElementById('form-subject').value || 'Portfolio Contact';
-      const message = document.getElementById('form-message').value;
+  if (!form) return;
 
-      const mailtoUrl = `mailto:praveenkumar63811@gmail.com?subject=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}`;
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('form-name').value.trim();
+    const email = document.getElementById('form-email').value.trim();
+    const subject = document.getElementById('form-subject').value.trim() || 'Portfolio Contact';
+    const message = document.getElementById('form-message').value.trim();
+
+    if (!name || !email || !message) {
+      showToast('Please fill in all required fields.');
+      return;
+    }
+
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending message...';
+    }
+
+    // Prepare Gmail compose and Mailto links
+    const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=praveenkumar63811@gmail.com&su=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}`;
+    const mailtoUrl = `mailto:praveenkumar63811@gmail.com?subject=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')')}`;
+
+    try {
+      showToast('Sending your message...');
+      
+      const response = await fetch('https://formsubmit.co/ajax/praveenkumar63811@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          _subject: `[Portfolio] ${subject} - from ${name}`,
+          message: message
+        })
+      });
+
+      const result = await response.json().catch(() => ({}));
 
       if (typeof confetti === 'function') {
         confetti({
@@ -84,12 +119,23 @@ function initContactForm() {
         });
       }
 
-      showToast('Opening your mail client...');
-      setTimeout(() => {
+      showToast('Message sent! Praveen received your message.');
+      form.reset();
+
+    } catch (err) {
+      // If network or adblocker blocks AJAX, seamlessly open Gmail Web Compose
+      showToast('Opening Gmail to send...');
+      const opened = window.open(gmailComposeUrl, '_blank');
+      if (!opened) {
         window.location.href = mailtoUrl;
-      }, 600);
-    });
-  }
+      }
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
+    }
+  });
 }
 
 function showToast(message) {
