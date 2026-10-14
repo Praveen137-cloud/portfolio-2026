@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initContactForm();
   initSmoothScroll();
+  initProjectCarousel();
 });
 
 /* ==========================================================================
@@ -122,3 +123,33 @@ function initSmoothScroll() {
     });
   });
 }
+
+/* ==========================================================================
+   4. Projects Horizontal Carousel Controls
+   ========================================================================== */
+function initProjectCarousel() {
+  const carousel = document.getElementById('projects-carousel');
+  const prevBtn = document.getElementById('project-prev-btn');
+  const nextBtn = document.getElementById('project-next-btn');
+
+  if (!carousel) return;
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({
+        left: -window.innerWidth,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({
+        left: window.innerWidth,
+        behavior: 'smooth'
+      });
+    });
+  }
+}
+

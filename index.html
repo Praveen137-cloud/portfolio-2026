@@ -368,15 +368,23 @@
       <!-- Signature Mitchell Sparrow Diagonal Skew Stripe -->
       <div class="w-full absolute top-[30%] bg-[#68B2A0]/10 left-0 h-[450px] -skew-y-12 pointer-events-none"></div>
 
+      <!-- Desktop Left & Right Carousel Navigation Arrows -->
+      <button id="project-prev-btn" class="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full bg-[#292929]/90 border border-[#68B2A0]/50 items-center justify-center text-[#68B2A0] hover:bg-[#68B2A0] hover:text-slate-950 transition-all shadow-2xl hover:scale-110 cursor-pointer backdrop-blur-sm" aria-label="Previous Project">
+        <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+
+      <button id="project-next-btn" class="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full bg-[#292929]/90 border border-[#68B2A0]/50 items-center justify-center text-[#68B2A0] hover:bg-[#68B2A0] hover:text-slate-950 transition-all shadow-2xl hover:scale-110 cursor-pointer backdrop-blur-sm" aria-label="Next Project">
+        <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
       <!-- Fullscreen Horizontal Snap Carousel -->
-      <div class="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80 pt-16 md:pt-12">
+      <div id="projects-carousel" class="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80 pt-16 md:pt-12 scroll-smooth">
         
         <!-- Project 1: SEOAgent.ai -->
         <div class="w-screen flex-shrink-0 snap-center flex flex-col space-y-4 md:space-y-5 items-center justify-center p-4 md:p-8 min-h-screen">
           
-          <!-- Mockup Window (100% Reliable HTML/CSS Mockup) -->
+          <!-- Mockup Window -->
           <div class="w-full max-w-xl md:max-w-2xl bg-[#0e1626] border border-cyan-500/30 rounded-2xl shadow-2xl overflow-hidden hover:border-cyan-400/60 transition-all">
-            <!-- Window Top Bar -->
             <div class="bg-[#090e18] px-4 py-2.5 flex items-center justify-between border-b border-white/5">
               <div class="flex items-center space-x-2">
                 <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -387,9 +395,7 @@
               <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">● LIVE AGENT</span>
             </div>
 
-            <!-- Dashboard Content Preview -->
             <div class="p-4 md:p-6 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
-              <!-- Score Ring -->
               <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 border border-white/5 text-center">
                 <div class="relative w-20 h-20 flex items-center justify-center">
                   <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
@@ -402,7 +408,6 @@
                 <span class="text-[9px] text-gray-400">0 - 100 Scoring</span>
               </div>
 
-              <!-- Metrics -->
               <div class="sm:col-span-2 space-y-2">
                 <div class="flex items-center justify-between p-2 rounded-lg bg-black/40 border border-white/5 text-xs font-mono">
                   <span class="text-gray-400">⚡ Groq LLM (Llama 3):</span>
@@ -422,7 +427,7 @@
           
           <div class="space-y-3 px-4 md:px-10 max-w-3xl text-center">
             <h4 class="text-lg md:text-2xl font-semibold text-white">
-              <span class="underline decoration-[#68B2A0] text-[#68B2A0]">Project 1 of 3:</span> SEOAgent.ai
+              <span class="underline decoration-[#68B2A0] text-[#68B2A0]">Project 1 of 6:</span> SEOAgent.ai
             </h4>
             
             <div class="flex flex-wrap items-center gap-1.5 justify-center">
@@ -441,7 +446,7 @@
                 <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 Live Demo
               </a>
-              <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5">
+              <a href="https://github.com/Praveen137-cloud/Seo-agent" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
                 Code
               </a>
@@ -454,7 +459,6 @@
           
           <!-- Mockup Window -->
           <div class="w-full max-w-xl md:max-w-2xl bg-[#0b1329] border border-emerald-500/30 rounded-2xl shadow-2xl overflow-hidden hover:border-emerald-400/60 transition-all">
-            <!-- Window Top Bar -->
             <div class="bg-[#070d1e] px-4 py-2.5 flex items-center justify-between border-b border-white/5">
               <div class="flex items-center space-x-2">
                 <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -465,7 +469,6 @@
               <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">● DSA ARENA</span>
             </div>
 
-            <!-- Code Editor Preview -->
             <div class="p-4 md:p-6 space-y-3 font-mono text-xs">
               <div class="bg-[#050813] p-3 rounded-lg border border-white/5 text-gray-300">
                 <span class="text-purple-400">function</span> <span class="text-emerald-400">twoSum</span>(nums: <span class="text-cyan-400">number[]</span>, target: <span class="text-cyan-400">number</span>) {<br>
@@ -487,7 +490,7 @@
           
           <div class="space-y-3 px-4 md:px-10 max-w-3xl text-center">
             <h4 class="text-lg md:text-2xl font-semibold text-white">
-              <span class="underline decoration-[#68B2A0] text-[#68B2A0]">Project 2 of 3:</span> Pico Platform
+              <span class="underline decoration-[#68B2A0] text-[#68B2A0]">Project 2 of 6:</span> Pico Platform
             </h4>
             
             <div class="flex flex-wrap items-center gap-1.5 justify-center">
@@ -506,7 +509,7 @@
                 <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 Live Demo
               </a>
-              <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5">
+              <a href="https://github.com/Praveen137-cloud/Pico" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
                 Code
               </a>
@@ -519,7 +522,6 @@
           
           <!-- Mockup Window -->
           <div class="w-full max-w-xl md:max-w-2xl bg-[#1a0f2e] border border-purple-500/30 rounded-2xl shadow-2xl overflow-hidden hover:border-purple-400/60 transition-all">
-            <!-- Window Top Bar -->
             <div class="bg-[#120822] px-4 py-2.5 flex items-center justify-between border-b border-white/5">
               <div class="flex items-center space-x-2">
                 <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -530,7 +532,6 @@
               <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-400 border border-rose-500/30">● THREAT RADAR</span>
             </div>
 
-            <!-- Threat Radar Preview -->
             <div class="p-4 md:p-6 space-y-3 font-mono text-xs">
               <div class="flex items-center justify-between p-3 rounded-lg bg-rose-950/40 border border-rose-500/30">
                 <div class="flex items-center gap-2">
@@ -553,7 +554,7 @@
           
           <div class="space-y-3 px-4 md:px-10 max-w-3xl text-center">
             <h4 class="text-lg md:text-2xl font-semibold text-white">
-              <span class="underline decoration-[#68B2A0] text-[#68B2A0]">Project 3 of 3:</span> Scam Hunter AI
+              <span class="underline decoration-[#68B2A0] text-[#68B2A0]">Project 3 of 6:</span> Scam Hunter AI
             </h4>
             
             <div class="flex flex-wrap items-center gap-1.5 justify-center">
@@ -572,13 +573,194 @@
                 <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 Live Demo
               </a>
-              <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5">
+              <a href="https://github.com/Praveen137-cloud/scam-hunter" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
                 Code
               </a>
             </div>
           </div>
         </div>
+
+        <!-- Project 4: Smart Expense & Finance Tracker -->
+        <div class="w-screen flex-shrink-0 snap-center flex flex-col space-y-4 md:space-y-5 items-center justify-center p-4 md:p-8 min-h-screen">
+          
+          <!-- Mockup Window -->
+          <div class="w-full max-w-xl md:max-w-2xl bg-[#0d1b1e] border border-[#68B2A0]/40 rounded-2xl shadow-2xl overflow-hidden hover:border-[#68B2A0] transition-all">
+            <div class="bg-[#081214] px-4 py-2.5 flex items-center justify-between border-b border-white/5">
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                <span class="text-xs font-mono text-gray-400 ml-2 hidden sm:inline">smart-expenses.analytics</span>
+              </div>
+              <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-[#68B2A0]/20 text-[#68B2A0] border border-[#68B2A0]/30">● FINANCE AI</span>
+            </div>
+
+            <div class="p-4 md:p-6 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+              <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 border border-white/5 text-center">
+                <div class="text-2xl font-bold font-mono text-[#68B2A0]">+24.8%</div>
+                <span class="text-[10px] font-bold text-gray-300 mt-1 uppercase">Savings Rate</span>
+                <span class="text-[9px] text-gray-400">Budget Optimized</span>
+              </div>
+
+              <div class="sm:col-span-2 space-y-2">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-black/40 border border-white/5 text-xs font-mono">
+                  <span class="text-gray-400">📊 Monthly Cashflow:</span>
+                  <span class="text-[#68B2A0] font-bold">Surplus Recorded</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-black/40 border border-white/5 text-xs font-mono">
+                  <span class="text-gray-400">🏷 Auto Categorizer:</span>
+                  <span class="text-sky-400 font-bold">AI Expense Tagger</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-black/40 border border-white/5 text-xs font-mono">
+                  <span class="text-gray-400">📈 Forecasting:</span>
+                  <span class="text-purple-400 font-bold">Quarterly Projections</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-3 px-4 md:px-10 max-w-3xl text-center">
+            <h4 class="text-lg md:text-2xl font-semibold text-white">
+              <span class="underline decoration-[#68B2A0] text-[#68B2A0]">Project 4 of 6:</span> Smart Expense &amp; Finance Tracker
+            </h4>
+            
+            <div class="flex flex-wrap items-center gap-1.5 justify-center">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">React</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Node.js</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">MongoDB</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Chart.js</span>
+            </div>
+
+            <p class="text-xs md:text-sm text-gray-300 text-justify md:text-center leading-relaxed">
+              Full-stack personal finance analytics engine featuring automated transaction categorization, subscription audit monitors, monthly budget forecasting, and interactive data visualization.
+            </p>
+
+            <div class="flex items-center justify-center gap-3 pt-1">
+              <a href="https://github.com/Praveen137-cloud/smart-expenses" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-[#68B2A0] text-slate-950 font-bold text-xs hover:bg-[#5aa08f] transition-all flex items-center gap-1.5 shadow-md">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                View Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Cipher Sandbox -->
+        <div class="w-screen flex-shrink-0 snap-center flex flex-col space-y-4 md:space-y-5 items-center justify-center p-4 md:p-8 min-h-screen">
+          
+          <!-- Mockup Window -->
+          <div class="w-full max-w-xl md:max-w-2xl bg-[#141419] border border-amber-500/30 rounded-2xl shadow-2xl overflow-hidden hover:border-amber-400/60 transition-all">
+            <div class="bg-[#0d0d12] px-4 py-2.5 flex items-center justify-between border-b border-white/5">
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                <span class="text-xs font-mono text-gray-400 ml-2 hidden sm:inline">cipher-sandbox.sec</span>
+              </div>
+              <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30">● CRYPTO LAB</span>
+            </div>
+
+            <div class="p-4 md:p-6 space-y-3 font-mono text-xs">
+              <div class="grid grid-cols-2 gap-2 text-[11px]">
+                <div class="p-2.5 rounded bg-black/50 border border-white/5">
+                  <span class="text-amber-400 block font-semibold mb-1">Caesar Cipher</span>
+                  <span class="text-gray-400">Shift Key: k=7 | Frequency Analysis</span>
+                </div>
+                <div class="p-2.5 rounded bg-black/50 border border-white/5">
+                  <span class="text-cyan-400 block font-semibold mb-1">Playfair 5x5 Matrix</span>
+                  <span class="text-gray-400">Polyalphabetic digraph cipher</span>
+                </div>
+              </div>
+              <div class="p-2.5 rounded bg-amber-950/20 border border-amber-500/20 text-gray-300 text-[11px] flex justify-between">
+                <span>Plaintext ➔ <strong>CIPHERTEXT</strong></span>
+                <span class="text-emerald-400 font-bold">Verified Key Matrix</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-3 px-4 md:px-10 max-w-3xl text-center">
+            <h4 class="text-lg md:text-2xl font-semibold text-white">
+              <span class="underline decoration-[#68B2A0] text-[#68B2A0]">Project 5 of 6:</span> Cipher Sandbox
+            </h4>
+            
+            <div class="flex flex-wrap items-center gap-1.5 justify-center">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Cryptography</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Ciphers</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Python</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Algorithms</span>
+            </div>
+
+            <p class="text-xs md:text-sm text-gray-300 text-justify md:text-center leading-relaxed">
+              Cryptographic encryption and decryption sandbox implementing classical Caesar Cipher shifts, 5x5 matrix Playfair polyalphabetic substitution, and brute-force frequency analysis.
+            </p>
+
+            <div class="flex items-center justify-center gap-3 pt-1">
+              <a href="https://github.com/Praveen137-cloud/Cipher-sandbox" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-[#68B2A0] text-slate-950 font-bold text-xs hover:bg-[#5aa08f] transition-all flex items-center gap-1.5 shadow-md">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                View Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Movie Booking System (LLD) -->
+        <div class="w-screen flex-shrink-0 snap-center flex flex-col space-y-4 md:space-y-5 items-center justify-center p-4 md:p-8 min-h-screen">
+          
+          <!-- Mockup Window -->
+          <div class="w-full max-w-xl md:max-w-2xl bg-[#131b24] border border-indigo-500/30 rounded-2xl shadow-2xl overflow-hidden hover:border-indigo-400/60 transition-all">
+            <div class="bg-[#0b1016] px-4 py-2.5 flex items-center justify-between border-b border-white/5">
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                <span class="text-xs font-mono text-gray-400 ml-2 hidden sm:inline">movie-booking-lld.sys</span>
+              </div>
+              <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">● SYSTEM DESIGN</span>
+            </div>
+
+            <div class="p-4 md:p-6 space-y-3 font-mono text-xs">
+              <div class="flex items-center justify-between p-2.5 rounded bg-black/50 border border-white/5">
+                <span class="text-indigo-400">Concurrency Model:</span>
+                <span class="text-emerald-400 font-semibold">Pessimistic Seat Locking</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-[11px]">
+                <div class="p-2 rounded bg-black/40 border border-white/5 text-gray-300">
+                  <span class="text-purple-400">Design Patterns:</span> Strategy &amp; Observer
+                </div>
+                <div class="p-2 rounded bg-black/40 border border-white/5 text-gray-300">
+                  <span class="text-sky-400">Architecture:</span> Clean OOP / Multithreaded
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-3 px-4 md:px-10 max-w-3xl text-center">
+            <h4 class="text-lg md:text-2xl font-semibold text-white">
+              <span class="underline decoration-[#68B2A0] text-[#68B2A0]">Project 6 of 6:</span> Movie Booking System (LLD)
+            </h4>
+            
+            <div class="flex flex-wrap items-center gap-1.5 justify-center">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Java</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">System Design</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">OOP</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Concurrency</span>
+            </div>
+
+            <p class="text-xs md:text-sm text-gray-300 text-justify md:text-center leading-relaxed">
+              Low-Level Design (LLD) for a concurrent cinema seat reservation engine implementing Strategy and Observer patterns, pessimistic seat locks against race conditions, and dynamic pricing.
+            </p>
+
+            <div class="flex items-center justify-center gap-3 pt-1">
+              <a href="https://github.com/Praveen137-cloud/movie_lld" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-[#68B2A0] text-slate-950 font-bold text-xs hover:bg-[#5aa08f] transition-all flex items-center gap-1.5 shadow-md">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                View Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
       </div>
     </section>
