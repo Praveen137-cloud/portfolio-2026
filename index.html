@@ -1,45 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praveen Kumar R | Full-Stack & AI Developer</title>
-  <meta name="description" content="Portfolio of Praveen Kumar R - Full-Stack & AI Developer. Computer Science undergraduate building scalable web applications, autonomous AI agents (Groq, Gemini, Llama 3), and production systems.">
-  <meta name="keywords" content="Praveen Kumar, Full Stack Developer, AI Developer, React 19, FastAPI, Groq LLM, Ramco Institute of Technology, Portfolio">
-  <meta name="author" content="Praveen Kumar R">
-  
-  <!-- Favicon -->
+  <title>Praveen's Portfolio | Full-Stack &amp; AI Developer</title>
+  <meta name="description" content="Portfolio of Praveen Kumar R - Full-Stack &amp; AI Developer building autonomous AI agents, machine learning workflows, and scalable web applications.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Space Grotesk"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
           colors: {
-            primary: '#06b6d4',
-            secondary: '#8b5cf6',
-            emerald: {
-              400: '#34d399',
-              500: '#10b981',
-            },
-            dark: {
-              900: '#090d16',
-              800: '#0f172a',
-              700: '#1e293b',
-            }
+            darkBlack: '#242424',
+            darkGreen: '#68B2A0',
+            lightGreen: '#68B2A0',
+            grayColor: '#9ca3af'
           }
         }
       }
@@ -52,1453 +35,504 @@
   <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-  <!-- Custom Styles -->
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#090d16] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
-
-  <!-- Interactive Particle Background Canvas -->
-  <canvas id="particle-canvas"></canvas>
+<body class="bg-[#242424] text-white">
 
   <!-- Toast Notification -->
-  <div id="toast" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-900/95 border border-cyan-500/40 text-cyan-200 shadow-2xl backdrop-blur-md">
-    <i data-lucide="check-circle" class="w-5 h-5 text-cyan-400"></i>
+  <div id="toast" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#292929] border border-[#68B2A0]/40 text-[#68B2A0] shadow-2xl backdrop-blur-md">
+    <i data-lucide="check-circle" class="w-5 h-5 text-[#68B2A0]"></i>
     <span id="toast-message" class="text-sm font-medium">Notification message</span>
   </div>
 
-  <!-- Navigation Bar -->
-  <header class="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <!-- Snap Container -->
+  <div class="snap-container scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80">
+
+    <!-- Sticky Top Header (Mitchell Sparrow Signature Header) -->
+    <header class="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       
-      <!-- Brand Logo -->
-      <a href="#" class="group flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center font-display font-bold text-lg text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-          P
-        </div>
-        <div>
-          <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-cyan-400 transition-colors">
-            Praveen
-          </span>
-          <span class="block text-[10px] font-mono text-slate-400 tracking-wider uppercase">Full-Stack &amp; AI</span>
+      <!-- Social Icons (Left) -->
+      <div class="flex flex-row items-center space-x-3">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/praveen-kumar/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#68B2A0] hover:border-[#68B2A0]/50 hover:scale-110 transition-all" aria-label="LinkedIn">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#68B2A0] hover:border-[#68B2A0]/50 hover:scale-110 transition-all" aria-label="GitHub">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/916381162006" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#68B2A0] hover:border-[#68B2A0]/50 hover:scale-110 transition-all" aria-label="WhatsApp">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Resume Download -->
+        <a href="praveen-resume.pdf" target="_blank" download="Praveen_Kumar_Resume.pdf" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#68B2A0] hover:border-[#68B2A0]/50 hover:scale-110 transition-all" title="Download Resume PDF">
+          <i data-lucide="file-down" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Right Header: Get In Touch -->
+      <a href="#contact">
+        <div class="flex flex-row items-center text-gray-300 cursor-pointer group">
+          <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 group-hover:text-[#68B2A0] group-hover:border-[#68B2A0]/50 transition-all mr-2">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </div>
+          <p class="uppercase hidden md:inline-flex text-xs tracking-widest text-gray-400 group-hover:text-[#68B2A0] transition-colors">
+            Get in touch
+          </p>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-1 lg:gap-2">
-        <a href="#about" class="desktop-nav-link px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/5 transition-colors">About</a>
-        <a href="#experience" class="desktop-nav-link px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/5 transition-colors">Experience</a>
-        <a href="#projects" class="desktop-nav-link px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/5 transition-colors">Projects</a>
-        <a href="#skills" class="desktop-nav-link px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/5 transition-colors">Skills</a>
-        <a href="#certifications" class="desktop-nav-link px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/5 transition-colors">Certs</a>
-        <a href="#terminal" class="desktop-nav-link px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/5 transition-colors flex items-center gap-1.5">
-          <span class="text-xs text-emerald-400 font-mono">&gt;_</span> CLI
-        </a>
-        <a href="#contact" class="desktop-nav-link px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/5 transition-colors">Contact</a>
-      </nav>
+    </header>
 
-      <!-- Right Header Actions -->
-      <div class="hidden sm:flex items-center gap-3">
-        <!-- Theme Palette Dropdown -->
-        <div class="relative">
-          <button id="theme-toggle-btn" aria-label="Select theme palette" class="flex items-center gap-2 px-3 py-2 rounded-xl border border-white/10 bg-white/5 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 text-xs font-semibold transition-all">
-            <i data-lucide="palette" class="w-4 h-4 text-cyan-400"></i>
-            <span class="hidden lg:inline">Theme</span>
-            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
-          </button>
-
-          <!-- Theme Dropdown Menu -->
-          <div id="theme-dropdown" class="theme-dropdown hidden">
-            <div class="px-2 py-1.5 text-[10px] font-mono text-slate-400 uppercase tracking-wider border-b border-white/10 mb-1">
-              Select Theme Palette
-            </div>
-            <div id="theme-options-list" class="space-y-1">
-              <!-- Dynamically populated by script.js -->
-            </div>
-          </div>
-        </div>
-
-        <!-- Resume Download Button -->
-        <a href="praveen-resume.pdf" target="_blank" download="Praveen_Kumar_Resume.pdf" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all">
-          <i data-lucide="file-down" class="w-4 h-4"></i>
-          <span>Resume</span>
-        </a>
-      </div>
-
-      <!-- Mobile Hamburger Button -->
-      <div class="flex items-center gap-2 md:hidden">
-        <button id="mobile-menu-btn" aria-label="Open mobile menu" class="p-2 rounded-lg border border-white/10 text-slate-300 hover:text-white">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-      </div>
-
-    </div>
-
-    <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-white/10 bg-[#090d16]/95 backdrop-blur-xl px-4 pt-2 pb-6 space-y-2">
-      <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">About</a>
-      <a href="#experience" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Experience</a>
-      <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Projects</a>
-      <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Skills</a>
-      <a href="#certifications" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Certifications</a>
-      <a href="#terminal" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Interactive CLI</a>
-      <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-cyan-400">Contact</a>
-      
-      <!-- Mobile Theme Palette Selector -->
-      <div class="pt-3 pb-2 border-t border-white/10">
-        <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider px-3 mb-2 flex items-center gap-1.5">
-          <i data-lucide="palette" class="w-3.5 h-3.5 text-cyan-400"></i> Theme Palette:
-        </div>
-        <div id="mobile-theme-options" class="flex flex-wrap gap-1.5 px-3">
-          <!-- Populated by script.js -->
-        </div>
-      </div>
-
-      <div class="pt-2">
-        <a href="praveen-resume.pdf" target="_blank" download="Praveen_Kumar_Resume.pdf" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm">
-          <i data-lucide="file-down" class="w-4 h-4"></i> Download Resume (PDF)
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <!-- SECTION 1: HERO SECTION -->
+    <section id="hero" class="snap-section">
+      <div class="h-screen flex flex-col space-y-6 md:space-y-8 items-center justify-center text-center overflow-hidden">
         
-        <!-- Left Hero Text Content -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <!-- Concentric Background Rings (Mitchell Sparrow Signature) -->
+        <div class="relative flex justify-center items-center">
+          <div class="bg-circle border border-grayColor opacity-20 h-[200px] w-[200px] mt-48 md:mt-52 animate-ping"></div>
+          <div class="bg-circle border border-grayColor opacity-20 h-[300px] w-[300px] mt-48 md:mt-52"></div>
+          <div class="bg-circle border border-grayColor opacity-20 h-[500px] w-[500px] mt-48 md:mt-52"></div>
+          <div class="bg-circle border border-[#68B2A0] opacity-30 h-[510px] w-[510px] md:h-[650px] md:w-[650px] animate-pulse mt-48 md:mt-52"></div>
+          <div class="bg-circle border border-grayColor opacity-10 h-[800px] w-[800px] mt-48 md:mt-52"></div>
+        </div>
+
+        <!-- Centered Circular Portrait Image -->
+        <img class="relative rounded-full h-32 w-32 md:h-36 md:w-36 mx-auto object-cover object-[center_35%] border-2 border-[#68B2A0]/50 shadow-2xl z-20" src="assets/praveen-profile.jpg" alt="Praveen Kumar R" />
+
+        <!-- Subtitle & Main Typewriter Title -->
+        <div class="z-20 space-y-2">
+          <h2 class="text-xs md:text-sm uppercase text-gray-400 pb-1 tracking-[12px] md:tracking-[15px]">
+            Full-Stack &amp; AI Developer
+          </h2>
+          <h1 class="text-2xl md:text-5xl lg:text-6xl font-semibold px-10 min-h-[4rem] flex items-center justify-center">
+            <span id="typewriter-text" class="mr-2 text-white"></span>
+            <span class="blinking-cursor">|</span>
+          </h1>
+
+          <!-- Quick Navigation Buttons -->
+          <div class="pt-5 flex flex-wrap gap-2 md:gap-3 justify-center">
+            <a href="#about"><button class="heroButton">About</button></a>
+            <a href="#experience"><button class="heroButton">Experience</button></a>
+            <a href="#skills"><button class="heroButton">Skills</button></a>
+            <a href="#projects"><button class="heroButton">Projects</button></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT SECTION -->
+    <section id="about" class="snap-section">
+      <div class="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-6 md:px-10 justify-evenly mx-auto items-center">
+        
+        <!-- Section Header Title -->
+        <h3 class="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
+          About
+        </h3>
+
+        <!-- About Photo -->
+        <img class="-mb-16 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover object-[center_30%] md:rounded-2xl md:w-64 md:h-96 xl:w-[420px] xl:h-[520px] border border-[#68B2A0]/30 shadow-2xl mt-16 md:mt-0" src="assets/praveen-profile.jpg" alt="Praveen Kumar R" />
+
+        <!-- About Story Text -->
+        <div class="space-y-4 md:space-y-8 px-0 md:px-10 max-w-xl">
+          <h4 class="text-xl md:text-4xl font-semibold">
+            Here is a <span class="underline decoration-[#68B2A0]/50">little</span> background
+          </h4>
           
-          <!-- Availability Pill -->
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>AVAILABLE FOR FULL-STACK &amp; AI OPPORTUNITIES</span>
-          </div>
-
-          <!-- Main Name & Title -->
-          <div class="space-y-2">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight leading-[1.15]">
-              Hello, I'm <br class="hidden sm:inline">
-              <span class="text-gradient">Praveen Kumar R</span>
-            </h1>
-            
-            <!-- Typewriter Subtitle -->
-            <div class="h-10 sm:h-12 flex items-center justify-center lg:justify-start">
-              <span class="text-xl sm:text-2xl lg:text-3xl font-display font-semibold text-slate-300">
-                <span id="typing-text" class="text-cyan-400"></span><span class="typing-cursor"></span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Summary Pitch -->
-          <p class="text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
-            Motivated Computer Science undergraduate at <strong class="text-white font-semibold">Ramco Institute of Technology</strong> with a strong focus on Full-Stack Web Development, Machine Learning, and Artificial Intelligence. Passionate about architecting scalable web apps, integrating LLM workflows (Groq, Gemini), and shipping high-impact products.
+          <p class="text-xs md:text-base text-gray-300 text-justify leading-relaxed">
+            Hey 👋🏼 I am <strong class="text-white">Praveen Kumar R</strong>, a Full-Stack Web &amp; AI Developer based in Tamil Nadu, India. I am currently pursuing my Bachelor's degree in <strong class="text-[#68B2A0]">Computer Science and Engineering (2023–2027)</strong> at Ramco Institute of Technology.
           </p>
 
-          <!-- Quick Badges -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
-            <span class="tech-pill"><i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-400"></i> AI &amp; LLM Systems</span>
-            <span class="tech-pill"><i data-lucide="code-2" class="w-3.5 h-3.5 text-indigo-400"></i> React 19 &amp; FastAPI</span>
-            <span class="tech-pill"><i data-lucide="bot" class="w-3.5 h-3.5 text-emerald-400"></i> Autonomous Crawlers</span>
-            <span class="tech-pill"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-400"></i> Cybersecurity</span>
+          <p class="text-xs md:text-base text-gray-300 text-justify leading-relaxed">
+            I love building end-to-end web architectures and integrating autonomous AI workflows. Through my work as an <strong class="text-white">AI / Full-Stack Developer Intern at Aram Analytics</strong>, I engineered <strong>SEOAgent.ai</strong> (multi-page crawler, 0-100 scoring engine, Groq Llama 3 LLM, and Chrome extension). Previously at <strong>Strinkit Technologies</strong>, I built high-performance responsive web components from complex Figma systems.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono text-gray-400">
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">🎓 B.E. CSE (CGPA: 7.35)</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">🏆 NPTEL Java (86%)</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">🏆 NPTEL Python (82% Elite)</span>
           </div>
-
-          <!-- CTA Buttons -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all">
-              <i data-lucide="rocket" class="w-4 h-4"></i>
-              <span>Explore Projects</span>
-            </a>
-
-            <a href="praveen-resume.pdf" target="_blank" download="Praveen_Kumar_Resume.pdf" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-white/10 hover:border-cyan-500/40 text-slate-200 font-semibold text-sm hover:scale-[1.02] active:scale-[0.98] transition-all">
-              <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
-              <span>Download CV</span>
-            </a>
-
-            <button id="hero-copy-email" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-cyan-400 text-sm font-medium transition-all" title="Click to copy email">
-              <i data-lucide="copy" class="w-4 h-4"></i>
-              <span>Copy Email</span>
-            </button>
-          </div>
-
-          <!-- Social Links -->
-          <div class="flex items-center justify-center lg:justify-start gap-3 pt-3 text-slate-400">
-            <span class="text-xs uppercase tracking-wider text-slate-400 font-mono">Connect:</span>
-            <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 hover:text-cyan-400 border border-white/5 transition-all" aria-label="GitHub">
-              <i data-lucide="github" class="w-4 h-4"></i>
-            </a>
-            <a href="https://linkedin.com/in/praveen-kumar" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 hover:bg-blue-500/20 hover:text-blue-400 border border-white/5 transition-all" aria-label="LinkedIn">
-              <i data-lucide="linkedin" class="w-4 h-4"></i>
-            </a>
-            <a href="mailto:praveenkumar63811@gmail.com" class="p-2 rounded-lg bg-white/5 hover:bg-emerald-500/20 hover:text-emerald-400 border border-white/5 transition-all" aria-label="Email">
-              <i data-lucide="mail" class="w-4 h-4"></i>
-            </a>
-            <a href="https://wa.me/916381162006" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 hover:bg-green-500/20 hover:text-green-400 border border-white/5 transition-all" aria-label="WhatsApp">
-              <i data-lucide="message-square" class="w-4 h-4"></i>
-            </a>
-            <a href="tel:+916381162006" class="p-2 rounded-lg bg-white/5 hover:bg-amber-500/20 hover:text-amber-400 border border-white/5 transition-all" aria-label="Phone">
-              <i data-lucide="phone" class="w-4 h-4"></i>
-            </a>
-          </div>
-
         </div>
 
-        <!-- Right Hero Photo & Interactive Floating Badges -->
-        <div class="lg:col-span-5 flex justify-center">
-          <div class="relative w-72 sm:w-80 md:w-96">
+      </div>
+    </section>
+
+    <!-- SECTION 3: EXPERIENCE SECTION (Horizontal Snap Scroll) -->
+    <section id="experience" class="snap-section">
+      <div class="h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-4 md:px-10 justify-evenly mx-auto items-center">
+        
+        <h3 class="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
+          Experience
+        </h3>
+
+        <!-- Horizontal Snap Carousel -->
+        <div class="w-full h-3/4 md:h-2/3 text-left pb-4 flex space-x-6 overflow-x-scroll p-6 md:p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80 mt-12 md:mt-0">
+          
+          <!-- Experience Card 1: Aram Analytics -->
+          <article class="experience-card flex flex-col items-start space-y-3 flex-shrink-0 w-80 md:w-[600px] xl:w-[680px] snap-center p-6 md:p-10">
             
-            <!-- Neon Ambient Glow Backdrop -->
-            <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 rounded-3xl opacity-30 blur-2xl animate-pulse"></div>
-
-            <!-- Profile Image Frame -->
-            <div class="relative rounded-3xl overflow-hidden p-1.5 bg-gradient-to-br from-cyan-400 via-indigo-500 to-purple-600 shadow-2xl">
-              <div class="relative rounded-[22px] overflow-hidden bg-slate-950 aspect-[3/4]">
-                <img src="assets/praveen-profile.jpg" alt="Praveen Kumar R" class="w-full h-full object-cover object-[center_65%] hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-
-                <!-- Bottom Photo Label -->
-                <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-900/85 backdrop-blur-md border border-white/10">
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <p class="text-xs font-bold text-white">Praveen Kumar R</p>
-                      <p class="text-[11px] text-cyan-400 font-mono">B.E. CSE (2023–2027)</p>
-                    </div>
-                    <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Ramco Tech</span>
-                  </div>
+            <div class="w-full flex justify-between items-start">
+              <div>
+                <h4 class="text-lg md:text-2xl font-light text-white">AI / Full-Stack Developer Intern</h4>
+                <p class="font-bold text-md md:text-xl mt-1 text-[#68B2A0]">Aram Analytics</p>
+                <div class="flex space-x-2 my-3">
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-gray-300">React 19</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-gray-300">FastAPI</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-gray-300">Groq LLM</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-gray-300">Chrome Ext</span>
                 </div>
               </div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-mono bg-[#68B2A0]/20 text-[#68B2A0] border border-[#68B2A0]/40">Active</span>
             </div>
 
-            <!-- Floating Glass Badge 1: Top Right -->
-            <div class="absolute -top-4 -right-4 sm:-right-8 p-3 rounded-xl glass-panel animate-float shadow-xl flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
-                <i data-lucide="sparkles" class="w-4 h-4"></i>
-              </div>
+            <p class="uppercase py-1 text-gray-400 text-xs md:text-sm tracking-wider font-mono">
+              09/2026 – Present • Puliyangudi, India
+            </p>
+
+            <ul class="list-disc text-gray-300 space-y-2 text-justify text-xs md:text-sm pl-5 pr-2 overflow-y-auto">
+              <li>Engineered <strong>SEOAgent.ai</strong>, an autonomous web auditing &amp; AI strategy platform featuring multi-page crawling, technical diagnostics, 0–100 scoring engine, and automated PDF report generation.</li>
+              <li>Integrated <strong>Groq LLM (Llama 3)</strong> for real-time actionable recommendations with sub-second latency.</li>
+              <li>Built a Manifest V3 Chrome Extension enabling 1-click on-page SEO audits directly while browsing.</li>
+              <li>Designed automated PDF generation pipelines using Python ReportLab.</li>
+            </ul>
+          </article>
+
+          <!-- Experience Card 2: Strinkit Technologies -->
+          <article class="experience-card flex flex-col items-start space-y-3 flex-shrink-0 w-80 md:w-[600px] xl:w-[680px] snap-center p-6 md:p-10">
+            
+            <div class="w-full flex justify-between items-start">
               <div>
-                <p class="text-[11px] font-mono text-slate-400 uppercase">AI Specialist</p>
-                <p class="text-xs font-bold text-white">Groq &amp; Gemini LLMs</p>
+                <h4 class="text-lg md:text-2xl font-light text-white">Front-End Developer Intern</h4>
+                <p class="font-bold text-md md:text-xl mt-1 text-[#68B2A0]">Strinkit Technologies</p>
+                <div class="flex space-x-2 my-3">
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-gray-300">HTML5</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-gray-300">CSS3</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-gray-300">JavaScript ES6+</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-gray-300">Figma</span>
+                </div>
               </div>
+              <span class="px-3 py-1 rounded-full text-[10px] font-mono bg-white/10 text-gray-300 border border-white/20">Completed</span>
             </div>
 
-            <!-- Floating Glass Badge 2: Bottom Left -->
-            <div class="absolute -bottom-6 -left-4 sm:-left-8 p-3 rounded-xl glass-panel animate-float-delayed shadow-xl flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
-                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <p class="text-[11px] font-mono text-slate-400 uppercase">Production Status</p>
-                <p class="text-xs font-bold text-white">3+ Live Deployments</p>
-              </div>
-            </div>
+            <p class="uppercase py-1 text-gray-400 text-xs md:text-sm tracking-wider font-mono">
+              12/2025 • Rajapalayam, India
+            </p>
 
-          </div>
+            <ul class="list-disc text-gray-300 space-y-2 text-justify text-xs md:text-sm pl-5 pr-2 overflow-y-auto">
+              <li>Developed high-performance, responsive user interfaces using HTML5, CSS3, and modern JavaScript (ES6+).</li>
+              <li>Translated complex Figma design wireframes into pixel-perfect, production-ready web components.</li>
+              <li>Optimized front-end assets and code bundles for faster page load speeds and complete cross-browser compatibility across desktop and mobile devices.</li>
+            </ul>
+          </article>
+
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Metrics / Key Highlights Counter Section -->
-  <section class="relative z-10 border-y border-white/10 bg-slate-900/60 backdrop-blur-md py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+    <!-- SECTION 4: SKILLS SECTION (Interactive Circle Grid with Hover Percentages) -->
+    <section id="skills" class="snap-section">
+      <div class="h-screen flex relative flex-col text-center md:text-left max-w-7xl px-4 md:px-10 justify-center mx-auto items-center">
         
-        <div class="pt-4 md:pt-0">
-          <p class="text-3xl sm:text-4xl font-extrabold font-display text-gradient">3+</p>
-          <p class="text-xs sm:text-sm font-medium text-slate-400 mt-1">Live AI &amp; Web Platforms</p>
-        </div>
+        <h3 class="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
+          Skills
+        </h3>
+        <h4 class="absolute top-24 md:top-32 uppercase tracking-[3px] text-gray-500 text-xs">
+          Hover over a skill for current proficiency
+        </h4>
 
-        <div class="pt-4 md:pt-0">
-          <p class="text-3xl sm:text-4xl font-extrabold font-display text-gradient-cyan">86%</p>
-          <p class="text-xs sm:text-sm font-medium text-slate-400 mt-1">NPTEL Java Score</p>
-        </div>
+        <!-- 16 Circular Skills Grid -->
+        <div class="grid grid-cols-4 gap-4 md:gap-6 mt-20 md:mt-16">
+          
+          <!-- Skill 1: Python -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">Python</span>
+            <div class="skill-overlay"><p>90%</p></div>
+          </div>
 
-        <div class="pt-4 md:pt-0">
-          <p class="text-3xl sm:text-4xl font-extrabold font-display text-gradient-emerald">82%</p>
-          <p class="text-xs sm:text-sm font-medium text-slate-400 mt-1">NPTEL Python (Elite + Silver)</p>
-        </div>
+          <!-- Skill 2: React 19 -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">React</span>
+            <div class="skill-overlay"><p>85%</p></div>
+          </div>
 
-        <div class="pt-4 md:pt-0">
-          <p class="text-3xl sm:text-4xl font-extrabold font-display text-white">7.35</p>
-          <p class="text-xs sm:text-sm font-medium text-slate-400 mt-1">B.E. CSE CGPA (Ramco Tech)</p>
+          <!-- Skill 3: FastAPI -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">FastAPI</span>
+            <div class="skill-overlay"><p>85%</p></div>
+          </div>
+
+          <!-- Skill 4: JavaScript -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">JS ES6+</span>
+            <div class="skill-overlay"><p>90%</p></div>
+          </div>
+
+          <!-- Skill 5: Java (NPTEL 86%) -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">Java</span>
+            <div class="skill-overlay"><p>86%</p></div>
+          </div>
+
+          <!-- Skill 6: C (NPTEL Elite) -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">C Lang</span>
+            <div class="skill-overlay"><p>80%</p></div>
+          </div>
+
+          <!-- Skill 7: Node.js -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">Node</span>
+            <div class="skill-overlay"><p>80%</p></div>
+          </div>
+
+          <!-- Skill 8: MongoDB -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">MongoDB</span>
+            <div class="skill-overlay"><p>80%</p></div>
+          </div>
+
+          <!-- Skill 9: PostgreSQL -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">Postgres</span>
+            <div class="skill-overlay"><p>75%</p></div>
+          </div>
+
+          <!-- Skill 10: Groq LLM -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">Groq AI</span>
+            <div class="skill-overlay"><p>90%</p></div>
+          </div>
+
+          <!-- Skill 11: Gemini AI -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">Gemini</span>
+            <div class="skill-overlay"><p>85%</p></div>
+          </div>
+
+          <!-- Skill 12: EasyOCR -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">EasyOCR</span>
+            <div class="skill-overlay"><p>80%</p></div>
+          </div>
+
+          <!-- Skill 13: Tailwind CSS -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">Tailwind</span>
+            <div class="skill-overlay"><p>90%</p></div>
+          </div>
+
+          <!-- Skill 14: Git & GitHub -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">GIT</span>
+            <div class="skill-overlay"><p>85%</p></div>
+          </div>
+
+          <!-- Skill 15: Socket.io -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">Socket.io</span>
+            <div class="skill-overlay"><p>80%</p></div>
+          </div>
+
+          <!-- Skill 16: Cybersecurity -->
+          <div class="skill-card group w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-[#68B2A0] p-2 bg-[#292929]">
+            <span class="text-xs md:text-sm font-bold text-gray-200">Security</span>
+            <div class="skill-overlay"><p>80%</p></div>
+          </div>
+
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Me Section -->
-  <section id="about" class="relative z-10 py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider">
-          <i data-lucide="user" class="w-3.5 h-3.5"></i> Engineer Profile
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
-          About <span class="text-gradient">Praveen Kumar R</span>
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Passionate about building scalable systems where modern web architecture seamlessly merges with agentic artificial intelligence.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <!-- SECTION 5: PROJECTS SECTION (Mitchell Sparrow Full-Screen Snap Carousel with Skew Stripe) -->
+    <section id="projects" class="snap-section">
+      <div class="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
         
-        <!-- Left: Detailed Bio Card -->
-        <div class="lg:col-span-7 glass-panel p-8 rounded-2xl space-y-6">
-          <h3 class="text-2xl font-bold font-display text-white flex items-center gap-3">
-            <span class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm font-mono">&lt;/&gt;</span>
-            Engineering Philosophy &amp; Background
-          </h3>
+        <h3 class="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl z-20">
+          Projects
+        </h3>
 
-          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-            I am currently an undergraduate in <strong class="text-white">Computer Science and Engineering (2023–2027)</strong> at 
-            <strong class="text-cyan-400">Ramco Institute of Technology</strong>, Rajapalayam, India. My journey combines deep software fundamentals in Data Structures &amp; Algorithms with practical product development.
-          </p>
+        <!-- Signature Mitchell Sparrow Diagonal Skew Stripe -->
+        <div class="w-full absolute top-[30%] bg-[#68B2A0]/10 left-0 h-[450px] -skew-y-12 pointer-events-none"></div>
 
-          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-            Through my internship experience as an <strong class="text-white">AI / Full-Stack Developer at Aram Analytics</strong> and previously as a <strong class="text-white">Front-End Developer at Strinkit Technologies</strong>, I have engineered full-scale platforms such as 
-            <strong class="text-emerald-400">SEOAgent.ai</strong> (autonomous web crawler, 0-100 scoring engine, and Llama 3 LLM recommendations), 
-            <strong class="text-indigo-400">Pico</strong> (gamified DSA platform with Monaco editor &amp; Gemini AI), and 
-            <strong class="text-rose-400">Autonomous Scam Hunter AI</strong> (EasyOCR and threat intelligence).
-          </p>
-
-          <!-- Core Pillars -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
-              <div class="flex items-center gap-2 text-cyan-400 font-semibold text-sm">
-                <i data-lucide="cpu" class="w-4 h-4"></i> Autonomous AI Workflows
+        <!-- Fullscreen Horizontal Snap Carousel -->
+        <div class="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80">
+          
+          <!-- Project 1: SEOAgent.ai -->
+          <div class="w-screen flex-shrink-0 snap-center flex flex-col space-y-4 md:space-y-6 items-center justify-center p-6 md:p-32 h-screen">
+            <img class="h-32 md:h-64 xl:h-72 object-contain rounded-2xl shadow-2xl border border-white/10" src="assets/seoagent-preview.svg" alt="SEOAgent.ai" />
+            
+            <div class="space-y-3 md:space-y-4 px-4 md:px-10 max-w-4xl text-center">
+              <h4 class="text-lg md:text-2xl lg:text-3xl font-semibold">
+                <span class="underline decoration-[#68B2A0]/50">Project 1 of 3:</span> SEOAgent.ai
+              </h4>
+              
+              <div class="flex items-center space-x-2 justify-center">
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">React 19</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">FastAPI</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Groq LLM</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">ReportLab</span>
               </div>
-              <p class="text-xs text-slate-400">Integrating Groq Llama 3 and Gemini API for sub-second intelligent recommendations and multi-agent reasoning.</p>
-            </div>
 
-            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
-              <div class="flex items-center gap-2 text-indigo-400 font-semibold text-sm">
-                <i data-lucide="layers" class="w-4 h-4"></i> Modern Full-Stack
-              </div>
-              <p class="text-xs text-slate-400">Developing responsive React 19 UIs paired with high-performance FastAPI and Node.js microservices.</p>
-            </div>
+              <p class="text-xs md:text-sm text-gray-300 text-justify md:text-center leading-relaxed">
+                An autonomous AI-powered technical SEO diagnostic platform featuring multi-page site crawling, 0–100 scoring engine, automated PDF audit report generation, sub-second LLM recommendations via Groq Cloud API, and a Manifest V3 Chrome Extension.
+              </p>
 
-            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
-              <div class="flex items-center gap-2 text-emerald-400 font-semibold text-sm">
-                <i data-lucide="shield" class="w-4 h-4"></i> Cyber Threat Forensics
+              <div class="flex items-center justify-center gap-4 pt-2">
+                <a href="https://seo-agent-inky-seven.vercel.app" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-[#68B2A0] text-slate-950 font-bold text-xs hover:bg-[#5aa08f] transition-all flex items-center gap-1.5">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+                </a>
+                <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
+                </a>
               </div>
-              <p class="text-xs text-slate-400">Computer vision OCR with EasyOCR, risk scoring engines, and live threat database querying (VirusTotal).</p>
-            </div>
-
-            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
-              <div class="flex items-center gap-2 text-amber-400 font-semibold text-sm">
-                <i data-lucide="zap" class="w-4 h-4"></i> Performance &amp; Scalability
-              </div>
-              <p class="text-xs text-slate-400">Asset optimization, real-time Socket.io state management, and CI/CD automation on Vercel and Render.</p>
             </div>
           </div>
+
+          <!-- Project 2: Pico -->
+          <div class="w-screen flex-shrink-0 snap-center flex flex-col space-y-4 md:space-y-6 items-center justify-center p-6 md:p-32 h-screen">
+            <img class="h-32 md:h-64 xl:h-72 object-contain rounded-2xl shadow-2xl border border-white/10" src="assets/pico-preview.svg" alt="Pico" />
+            
+            <div class="space-y-3 md:space-y-4 px-4 md:px-10 max-w-4xl text-center">
+              <h4 class="text-lg md:text-2xl lg:text-3xl font-semibold">
+                <span class="underline decoration-[#68B2A0]/50">Project 2 of 3:</span> Pico Platform
+              </h4>
+              
+              <div class="flex items-center space-x-2 justify-center">
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">React 19</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Node.js</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Socket.io</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Gemini AI</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">Monaco</span>
+              </div>
+
+              <p class="text-xs md:text-sm text-gray-300 text-justify md:text-center leading-relaxed">
+                Full-stack gamified Data Structures &amp; Algorithms platform featuring real-time code execution with Monaco Editor, AI-generated personalized tutoring lessons using Google Gemini API, live competitive rank tracking via Socket.io, and JWT authentication.
+              </p>
+
+              <div class="flex items-center justify-center gap-4 pt-2">
+                <a href="https://pico-sooty.vercel.app" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-[#68B2A0] text-slate-950 font-bold text-xs hover:bg-[#5aa08f] transition-all flex items-center gap-1.5">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+                </a>
+                <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Autonomous Scam Hunter AI -->
+          <div class="w-screen flex-shrink-0 snap-center flex flex-col space-y-4 md:space-y-6 items-center justify-center p-6 md:p-32 h-screen">
+            <img class="h-32 md:h-64 xl:h-72 object-contain rounded-2xl shadow-2xl border border-white/10" src="assets/scamhunter-preview.svg" alt="Scam Hunter AI" />
+            
+            <div class="space-y-3 md:space-y-4 px-4 md:px-10 max-w-4xl text-center">
+              <h4 class="text-lg md:text-2xl lg:text-3xl font-semibold">
+                <span class="underline decoration-[#68B2A0]/50">Project 3 of 3:</span> Scam Hunter AI
+              </h4>
+              
+              <div class="flex items-center space-x-2 justify-center">
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">FastAPI</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">PostgreSQL</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">EasyOCR</span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-gray-300">VirusTotal API</span>
+              </div>
+
+              <p class="text-xs md:text-sm text-gray-300 text-justify md:text-center leading-relaxed">
+                An AI cybersecurity platform for automated digital scam and phishing detection featuring screenshot EasyOCR analysis, dynamic 0–100 risk scoring, real-time threat intelligence feeds, and automated PDF forensic reports.
+              </p>
+
+              <div class="flex items-center justify-center gap-4 pt-2">
+                <a href="https://scam-hunter-ashen.vercel.app" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-[#68B2A0] text-slate-950 font-bold text-xs hover:bg-[#5aa08f] transition-all flex items-center gap-1.5">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+                </a>
+                <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-xs hover:bg-white/10 transition-all flex items-center gap-1.5">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Right: Fast Info Matrix Card -->
-        <div class="lg:col-span-5 glass-panel p-8 rounded-2xl flex flex-col justify-between space-y-6">
-          <h3 class="text-xl font-bold font-display text-white flex items-center gap-2">
-            <i data-lucide="info" class="w-5 h-5 text-cyan-400"></i>
-            Quick Facts &amp; Contact Card
-          </h3>
+      </div>
+    </section>
 
-          <div class="space-y-4 text-sm">
-            <div class="flex items-center justify-between pb-3 border-b border-white/10">
-              <span class="text-slate-400">Full Name</span>
-              <span class="text-white font-medium">Praveen Kumar R</span>
+    <!-- SECTION 6: CONTACT SECTION (Mitchell Sparrow Exact Layout) -->
+    <section id="contact" class="snap-section">
+      <div class="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-6 md:px-10 justify-evenly mx-auto items-center">
+        
+        <h3 class="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
+          Contact
+        </h3>
+
+        <div class="flex flex-col space-y-6 md:space-y-8 mt-12 md:mt-0 max-w-xl w-full">
+          
+          <h4 class="text-xl md:text-3xl font-semibold text-center">
+            I have got just what you need. <span class="decoration-[#68B2A0]/50 underline">Let's talk.</span>
+          </h4>
+
+          <!-- Contact items with pulsing icons -->
+          <div class="space-y-2 md:space-y-3">
+            <div class="flex items-center space-x-4 justify-center">
+              <i data-lucide="phone" class="text-[#68B2A0] h-6 w-6 animate-pulse"></i>
+              <a href="tel:+916381162006" class="text-base md:text-xl text-gray-200 hover:text-[#68B2A0] font-mono">
+                +91 6381162006
+              </a>
             </div>
 
-            <div class="flex items-center justify-between pb-3 border-b border-white/10">
-              <span class="text-slate-400">Current Role</span>
-              <span class="text-cyan-400 font-mono text-xs font-semibold">AI / Full-Stack Intern</span>
-            </div>
-
-            <div class="flex items-center justify-between pb-3 border-b border-white/10">
-              <span class="text-slate-400">Institution</span>
-              <span class="text-white font-medium text-right">Ramco Institute of Tech</span>
-            </div>
-
-            <div class="flex items-center justify-between pb-3 border-b border-white/10">
-              <span class="text-slate-400">Degree &amp; Batch</span>
-              <span class="text-white font-medium">B.E. CSE (2023 – 2027)</span>
-            </div>
-
-            <div class="flex items-center justify-between pb-3 border-b border-white/10">
-              <span class="text-slate-400">Location</span>
-              <span class="text-white font-medium flex items-center gap-1">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i> Tamil Nadu, India
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between pb-3 border-b border-white/10">
-              <span class="text-slate-400">Direct Email</span>
-              <a href="mailto:praveenkumar63811@gmail.com" class="text-cyan-400 hover:underline font-mono text-xs">
+            <div class="flex items-center space-x-4 justify-center">
+              <i data-lucide="mail" class="text-[#68B2A0] h-6 w-6 animate-pulse"></i>
+              <a href="mailto:praveenkumar63811@gmail.com" class="text-base md:text-xl text-gray-200 hover:text-[#68B2A0]">
                 praveenkumar63811@gmail.com
               </a>
             </div>
 
-            <div class="flex items-center justify-between">
-              <span class="text-slate-400">Phone</span>
-              <a href="tel:+916381162006" class="text-slate-200 hover:text-cyan-400 font-mono text-xs">
-                +91 6381162006
-              </a>
-            </div>
-          </div>
-
-          <!-- Bottom Action Box -->
-          <div class="pt-4 border-t border-white/10">
-            <a href="praveen-resume.pdf" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 font-semibold text-sm transition-all">
-              <i data-lucide="external-link" class="w-4 h-4"></i> View Official Resume PDF
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Work Experience Section -->
-  <section id="experience" class="relative z-10 py-24 bg-slate-900/40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider">
-          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Career Trajectory
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
-          Work <span class="text-gradient">Experience</span>
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Proven industry experience shipping production code, building AI diagnostic platforms, and optimizing web experiences.
-        </p>
-      </div>
-
-      <!-- Experience Cards Timeline -->
-      <div class="max-w-4xl mx-auto space-y-8">
-        
-        <!-- Experience 1: Aram Analytics -->
-        <div class="glass-panel p-6 sm:p-8 rounded-2xl relative overflow-hidden group hover:border-cyan-500/50 transition-all">
-          <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-cyan-400 to-blue-600"></div>
-
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
-            <div>
-              <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 mb-2">
-                ACTIVE INTERNSHIP
-              </span>
-              <h3 class="text-xl sm:text-2xl font-bold font-display text-white">
-                AI / Full-Stack Developer Intern
-              </h3>
-              <p class="text-cyan-400 font-semibold text-sm">
-                Aram Analytics <span class="text-slate-400 font-normal">• Puliyangudi, India</span>
+            <div class="flex items-center space-x-4 justify-center">
+              <i data-lucide="map-pin" class="text-[#68B2A0] h-6 w-6 animate-pulse"></i>
+              <p class="text-base md:text-xl text-gray-200">
+                Tamil Nadu, India
               </p>
             </div>
-            <div class="text-sm font-mono text-slate-400 flex items-center gap-1.5 self-start sm:self-center">
-              <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i>
-              <span>09/2026 – Present</span>
+          </div>
+
+          <!-- Mitchell Sparrow Contact Form -->
+          <form id="contact-form" class="flex flex-col space-y-2 w-full mx-auto">
+            <div class="md:flex md:space-x-2 space-y-2 md:space-y-0">
+              <input id="form-name" required placeholder="Name" class="contactInput" type="text" />
+              <input id="form-email" required placeholder="Email" class="contactInput" type="email" />
             </div>
-          </div>
-
-          <ul class="space-y-3 mt-6 text-sm text-slate-300">
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-400 font-bold mt-0.5">▹</span>
-              <span><strong>Engineered SEOAgent.ai:</strong> Architected an autonomous web auditing &amp; AI strategy platform featuring multi-page automated crawling, technical diagnostics, 0–100 scoring engine, and automated PDF report generation.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-400 font-bold mt-0.5">▹</span>
-              <span><strong>Groq LLM Integration (Llama 3):</strong> Integrated Groq Cloud API for real-time actionable recommendations, enabling sub-second latency for AI-driven SEO audits.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-400 font-bold mt-0.5">▹</span>
-              <span><strong>Manifest V3 Chrome Extension:</strong> Developed a dedicated browser extension allowing users to trigger 1-click on-page SEO audits directly while browsing.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-400 font-bold mt-0.5">▹</span>
-              <span><strong>Automated PDF Engine:</strong> Designed programmatic report compilation using Python ReportLab to generate branded, downloadable audit dossiers.</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-white/10">
-            <span class="tech-pill">React 19</span>
-            <span class="tech-pill">FastAPI</span>
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">Groq LLM (Llama 3)</span>
-            <span class="tech-pill">BeautifulSoup4</span>
-            <span class="tech-pill">ReportLab</span>
-            <span class="tech-pill">Chrome Extension V3</span>
-          </div>
-        </div>
-
-        <!-- Experience 2: Strinkit Technologies -->
-        <div class="glass-panel p-6 sm:p-8 rounded-2xl relative overflow-hidden group hover:border-indigo-500/50 transition-all">
-          <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-indigo-500 to-purple-600"></div>
-
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
-            <div>
-              <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-2">
-                FRONT-END INTERNSHIP
-              </span>
-              <h3 class="text-xl sm:text-2xl font-bold font-display text-white">
-                Front-End Developer Intern
-              </h3>
-              <p class="text-indigo-400 font-semibold text-sm">
-                Strinkit Technologies <span class="text-slate-400 font-normal">• Rajapalayam, India</span>
-              </p>
-            </div>
-            <div class="text-sm font-mono text-slate-400 flex items-center gap-1.5 self-start sm:self-center">
-              <i data-lucide="calendar" class="w-4 h-4 text-indigo-400"></i>
-              <span>12/2025</span>
-            </div>
-          </div>
-
-          <ul class="space-y-3 mt-6 text-sm text-slate-300">
-            <li class="flex items-start gap-3">
-              <span class="text-indigo-400 font-bold mt-0.5">▹</span>
-              <span><strong>Figma to Production Code:</strong> Translated complex Figma design wireframes and design systems into pixel-perfect, production-ready web components using HTML5, CSS3, and JavaScript (ES6+).</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-indigo-400 font-bold mt-0.5">▹</span>
-              <span><strong>Bundle &amp; Asset Optimization:</strong> Optimized front-end assets, image payloads, and JavaScript code bundles, reducing initial load latency across desktop and mobile devices.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-indigo-400 font-bold mt-0.5">▹</span>
-              <span><strong>Cross-Browser Compatibility:</strong> Verified responsiveness, flexbox/grid alignments, and smooth animations across Chrome, Safari, Firefox, and Edge.</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-white/10">
-            <span class="tech-pill">HTML5</span>
-            <span class="tech-pill">CSS3</span>
-            <span class="tech-pill">JavaScript (ES6+)</span>
-            <span class="tech-pill">Figma</span>
-            <span class="tech-pill">Responsive Design</span>
-            <span class="tech-pill">Web Performance</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Featured Projects Section -->
-  <section id="projects" class="relative z-10 py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider">
-          <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i> Portfolio Showcase
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
-          Featured <span class="text-gradient">Projects</span>
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Production-grade applications equipped with live working URLs, open-source repositories, and agentic AI architectures.
-        </p>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
-        <button data-filter="all" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 transition-all">
-          All Projects
-        </button>
-        <button data-filter="ai" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-400 border border-white/10 hover:border-cyan-500/40 hover:text-cyan-300 transition-all">
-          AI &amp; LLM Agents
-        </button>
-        <button data-filter="fullstack" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-400 border border-white/10 hover:border-cyan-500/40 hover:text-cyan-300 transition-all">
-          Full-Stack Web
-        </button>
-        <button data-filter="security" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-400 border border-white/10 hover:border-cyan-500/40 hover:text-cyan-300 transition-all">
-          Cybersecurity &amp; OCR
-        </button>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Project 1: SEOAgent.ai -->
-        <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between" data-category="ai fullstack">
-          <div>
-            <!-- Visual Graphic Preview -->
-            <div class="relative overflow-hidden aspect-[16/9] border-b border-white/10 bg-slate-950">
-              <img src="assets/seoagent-preview.svg" alt="SEOAgent.ai Preview" class="w-full h-full object-cover">
-              <div class="absolute top-3 right-3">
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 backdrop-blur-md">
-                  ● LIVE DEMO
-                </span>
-              </div>
-            </div>
-
-            <!-- Card Content -->
-            <div class="p-6 space-y-4">
-              <div>
-                <div class="flex items-center gap-2 mb-1.5">
-                  <span class="text-[11px] font-mono text-cyan-400 uppercase tracking-wider font-semibold">Autonomous Web Agent</span>
-                </div>
-                <h3 class="text-xl font-bold font-display text-white group-hover:text-cyan-400 transition-colors">
-                  SEOAgent.ai
-                </h3>
-                <p class="text-xs text-slate-400 mt-1">Autonomous SEO Audit &amp; AI Strategy Platform</p>
-              </div>
-
-              <!-- Case Study Specs (HuyML / Bison Studio Style) -->
-              <div class="grid grid-cols-3 gap-2 py-2 px-3 rounded-xl bg-white/[0.04] border border-white/5 text-[10px] font-mono">
-                <div>
-                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">ROLE</span>
-                  <span class="text-white font-semibold">AI Engineer</span>
-                </div>
-                <div>
-                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">YEAR</span>
-                  <span class="text-white font-semibold">2026</span>
-                </div>
-                <div>
-                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">CONTEXT</span>
-                  <span class="text-cyan-400 font-semibold truncate block">Aram Analytics</span>
-                </div>
-              </div>
-
-              <p class="text-slate-300 text-xs sm:text-sm line-clamp-3 leading-relaxed">
-                Engineered an AI-powered technical SEO diagnostic platform featuring automated multi-page site crawling, 0–100 scoring engine, automated PDF audit report generation, Groq Cloud API LLM recommendations, and a Manifest V3 Chrome Extension.
-              </p>
-
-              <!-- Feature Bullets -->
-              <div class="space-y-1.5 pt-1 text-xs text-slate-400">
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>Multi-page DOM crawling with BeautifulSoup4</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>Groq LLM (Llama 3) sub-second audit advice</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>Chrome Extension for 1-click browser audits</span>
-                </div>
-              </div>
-
-              <!-- Tech Pills -->
-              <div class="flex flex-wrap gap-1.5 pt-2">
-                <span class="tech-pill">React 19</span>
-                <span class="tech-pill">FastAPI</span>
-                <span class="tech-pill">Groq LLM</span>
-                <span class="tech-pill">ReportLab</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Actions -->
-          <div class="p-6 pt-0 border-t border-white/5 mt-4 flex items-center justify-between gap-2">
-            <a href="https://seo-agent-inky-seven.vercel.app" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-colors">
-              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              <span>Live Site</span>
-            </a>
-
-            <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" title="GitHub Repo">
-              <i data-lucide="github" class="w-4 h-4"></i>
-            </a>
-
-            <button data-project="seoagent" class="open-project-modal inline-flex items-center justify-center p-2.5 rounded-xl bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-cyan-400 transition-colors" title="View Technical Architecture">
-              <i data-lucide="info" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 2: Pico -->
-        <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between" data-category="fullstack ai">
-          <div>
-            <!-- Visual Graphic Preview -->
-            <div class="relative overflow-hidden aspect-[16/9] border-b border-white/10 bg-slate-950">
-              <img src="assets/pico-preview.svg" alt="Pico Platform Preview" class="w-full h-full object-cover">
-              <div class="absolute top-3 right-3">
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-purple-500/20 text-purple-400 border border-purple-500/30 backdrop-blur-md">
-                  ● LIVE DEMO
-                </span>
-              </div>
-            </div>
-
-            <!-- Card Content -->
-            <div class="p-6 space-y-4">
-              <div>
-                <div class="flex items-center gap-2 mb-1.5">
-                  <span class="text-[11px] font-mono text-purple-400 uppercase tracking-wider font-semibold">Gamified EdTech Platform</span>
-                </div>
-                <h3 class="text-xl font-bold font-display text-white group-hover:text-purple-400 transition-colors">
-                  Pico
-                </h3>
-                <p class="text-xs text-slate-400 mt-1">Gamified DSA Learning Sandbox &amp; AI Tutor</p>
-              </div>
-
-              <!-- Case Study Specs (HuyML / Bison Studio Style) -->
-              <div class="grid grid-cols-3 gap-2 py-2 px-3 rounded-xl bg-white/[0.04] border border-white/5 text-[10px] font-mono">
-                <div>
-                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">ROLE</span>
-                  <span class="text-white font-semibold">Full-Stack Dev</span>
-                </div>
-                <div>
-                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">YEAR</span>
-                  <span class="text-white font-semibold">2026</span>
-                </div>
-                <div>
-                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">CONTEXT</span>
-                  <span class="text-purple-400 font-semibold truncate block">Gamified EdTech</span>
-                </div>
-              </div>
-
-              <p class="text-slate-300 text-xs sm:text-sm line-clamp-3 leading-relaxed">
-                Built a full-stack gamified DSA platform featuring real-time code execution with Monaco Editor, AI-generated custom lessons using Google Gemini API, live rank tracking via Socket.io, and JWT authentication. Deployed CI/CD on Vercel and Render.
-              </p>
-
-              <!-- Feature Bullets -->
-              <div class="space-y-1.5 pt-1 text-xs text-slate-400">
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i>
-                  <span>Monaco Code Editor live execution environment</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i>
-                  <span>Google Gemini AI algorithmic tutor</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i>
-                  <span>Socket.io multiplayer live ranking &amp; XP system</span>
-                </div>
-              </div>
-
-              <!-- Tech Pills -->
-              <div class="flex flex-wrap gap-1.5 pt-2">
-                <span class="tech-pill">React 19</span>
-                <span class="tech-pill">Node.js</span>
-                <span class="tech-pill">MongoDB Atlas</span>
-                <span class="tech-pill">Gemini AI</span>
-                <span class="tech-pill">Socket.io</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Actions -->
-          <div class="p-6 pt-0 border-t border-white/5 mt-4 flex items-center justify-between gap-2">
-            <a href="https://pico-sooty.vercel.app" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-colors">
-              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              <span>Live Site</span>
-            </a>
-
-            <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" title="GitHub Repo">
-              <i data-lucide="github" class="w-4 h-4"></i>
-            </a>
-
-            <button data-project="pico" class="open-project-modal inline-flex items-center justify-center p-2.5 rounded-xl bg-white/5 hover:bg-purple-500/20 border border-white/10 text-purple-400 transition-colors" title="View Technical Architecture">
-              <i data-lucide="info" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 3: Autonomous Scam Hunter AI -->
-        <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between" data-category="security ai fullstack">
-          <div>
-            <!-- Visual Graphic Preview -->
-            <div class="relative overflow-hidden aspect-[16/9] border-b border-white/10 bg-slate-950">
-              <img src="assets/scamhunter-preview.svg" alt="Scam Hunter AI Preview" class="w-full h-full object-cover">
-              <div class="absolute top-3 right-3">
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30 backdrop-blur-md">
-                  ● LIVE DEMO
-                </span>
-              </div>
-            </div>
-
-            <!-- Card Content -->
-            <div class="p-6 space-y-4">
-              <div>
-                <div class="flex items-center gap-2 mb-1.5">
-                  <span class="text-[11px] font-mono text-rose-400 uppercase tracking-wider font-semibold">Cybersecurity &amp; Forensics</span>
-                </div>
-                <h3 class="text-xl font-bold font-display text-white group-hover:text-rose-400 transition-colors">
-                  Scam Hunter AI
-                </h3>
-                <p class="text-xs text-slate-400 mt-1">Autonomous Digital Scam &amp; Threat Detection</p>
-              </div>
-
-              <!-- Case Study Specs (HuyML / Bison Studio Style) -->
-              <div class="grid grid-cols-3 gap-2 py-2 px-3 rounded-xl bg-white/[0.04] border border-white/5 text-[10px] font-mono">
-                <div>
-                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">ROLE</span>
-                  <span class="text-white font-semibold">AI &amp; Cyber Dev</span>
-                </div>
-                <div>
-                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">YEAR</span>
-                  <span class="text-white font-semibold">2026</span>
-                </div>
-                <div>
-                  <span class="block text-[9px] uppercase tracking-wider text-slate-400">CONTEXT</span>
-                  <span class="text-rose-400 font-semibold truncate block">Threat Forensics</span>
-                </div>
-              </div>
-
-              <p class="text-slate-300 text-xs sm:text-sm line-clamp-3 leading-relaxed">
-                Engineered an AI cybersecurity platform for automated digital scam detection featuring screenshot EasyOCR analysis, dynamic risk scoring (0–100), real-time VirusTotal/URLScan threat intelligence, and automated PDF report generation using ReportLab.
-              </p>
-
-              <!-- Feature Bullets -->
-              <div class="space-y-1.5 pt-1 text-xs text-slate-400">
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-rose-400"></i>
-                  <span>EasyOCR text &amp; URL extraction from screenshots</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-rose-400"></i>
-                  <span>Dynamic 0–100 cybersecurity risk rating</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-rose-400"></i>
-                  <span>Live VirusTotal &amp; URLScan threat feed feeds</span>
-                </div>
-              </div>
-
-              <!-- Tech Pills -->
-              <div class="flex flex-wrap gap-1.5 pt-2">
-                <span class="tech-pill">FastAPI</span>
-                <span class="tech-pill">PostgreSQL</span>
-                <span class="tech-pill">Groq LLM</span>
-                <span class="tech-pill">EasyOCR</span>
-                <span class="tech-pill">Python</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Actions -->
-          <div class="p-6 pt-0 border-t border-white/5 mt-4 flex items-center justify-between gap-2">
-            <a href="https://scam-hunter-ashen.vercel.app" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs transition-colors">
-              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              <span>Live Site</span>
-            </a>
-
-            <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" title="GitHub Repo">
-              <i data-lucide="github" class="w-4 h-4"></i>
-            </a>
-
-            <button data-project="scamhunter" class="open-project-modal inline-flex items-center justify-center p-2.5 rounded-xl bg-white/5 hover:bg-rose-500/20 border border-white/10 text-rose-400 transition-colors" title="View Technical Architecture">
-              <i data-lucide="info" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Developer Terminal Section -->
-  <section id="terminal" class="relative z-10 py-20 bg-slate-950/60 border-y border-white/10">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono uppercase tracking-wider">
-          <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Developer Playground
-        </div>
-        <h2 class="text-3xl font-extrabold font-display text-white">
-          Interactive <span class="text-gradient-emerald">CLI Terminal</span>
-        </h2>
-        <p class="text-slate-400 text-xs sm:text-sm">
-          Recruiters &amp; developers: navigate Praveen's resume directly via command-line. Type <span class="text-cyan-400 font-mono font-bold">help</span> or try the secret <span class="text-emerald-400 font-mono font-bold">sudo hire</span> command!
-        </p>
-      </div>
-
-      <!-- Terminal Window Box -->
-      <div class="terminal-window">
-        <!-- Terminal Header -->
-        <div class="terminal-header px-4 py-3 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="terminal-dot bg-[#ff5f56]"></span>
-            <span class="terminal-dot bg-[#ffbd2e]"></span>
-            <span class="terminal-dot bg-[#27c93f]"></span>
-            <span class="text-xs font-mono text-slate-400 ml-2">bash — praveen-os ~ 80x24</span>
-          </div>
-          <div class="text-[10px] font-mono text-slate-400 hidden sm:block">
-            UTF-8 | Node v24 | React 19
-          </div>
-        </div>
-
-        <!-- Terminal Body -->
-        <div id="terminal-body" class="p-5 font-mono text-xs sm:text-sm text-slate-300 min-h-[260px] max-h-[380px] overflow-y-auto space-y-3 cursor-text">
-          <div class="text-slate-400">
-            Welcome to <span class="text-cyan-400 font-bold">Praveen Kumar R's Interactive Shell v2.4</span>.<br>
-            Type <span class="text-cyan-400 font-bold">help</span> to view all commands, or click any suggestion below:
-          </div>
-
-          <div class="flex flex-wrap gap-2 pt-1">
-            <button onclick="document.getElementById('terminal-input').value='about'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2 py-1 rounded bg-white/5 border border-white/10 hover:border-cyan-500/40 text-cyan-400 text-xs font-mono">about</button>
-            <button onclick="document.getElementById('terminal-input').value='skills'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2 py-1 rounded bg-white/5 border border-white/10 hover:border-cyan-500/40 text-cyan-400 text-xs font-mono">skills</button>
-            <button onclick="document.getElementById('terminal-input').value='projects'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2 py-1 rounded bg-white/5 border border-white/10 hover:border-cyan-500/40 text-cyan-400 text-xs font-mono">projects</button>
-            <button onclick="document.getElementById('terminal-input').value='exp'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2 py-1 rounded bg-white/5 border border-white/10 hover:border-cyan-500/40 text-cyan-400 text-xs font-mono">exp</button>
-            <button onclick="document.getElementById('terminal-input').value='sudo hire'; document.getElementById('terminal-input').dispatchEvent(new KeyboardEvent('keydown', {'key':'Enter'}));" class="px-2 py-1 rounded bg-emerald-500/20 border border-emerald-500/40 hover:bg-emerald-500/30 text-emerald-300 text-xs font-mono">sudo hire</button>
-          </div>
-        </div>
-
-        <!-- Terminal Input Line -->
-        <div class="px-5 py-3 border-t border-white/10 bg-black/40 flex items-center gap-2">
-          <span class="text-cyan-400 font-mono font-bold text-xs sm:text-sm">guest@praveen</span>
-          <span class="text-purple-400 font-mono text-xs sm:text-sm">:~$&nbsp;</span>
-          <input type="text" id="terminal-input" placeholder="type 'help' or 'sudo hire' and hit Enter..." class="flex-1 bg-transparent border-none outline-none font-mono text-xs sm:text-sm text-white placeholder:text-slate-600" autocomplete="off" spellcheck="false">
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Skills & Tech Matrix Section -->
-  <section id="skills" class="relative z-10 py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider">
-          <i data-lucide="cpu" class="w-3.5 h-3.5"></i> Technical Stack
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
-          Skills &amp; <span class="text-gradient">Competencies</span>
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          A comprehensive breakdown of programming languages, libraries, databases, and AI frameworks I utilize.
-        </p>
-      </div>
-
-      <!-- Skills Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Category 1: Languages -->
-        <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-cyan-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
-              <i data-lucide="code" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-white font-display">Languages</h3>
-              <p class="text-xs text-slate-400 font-mono">Core Programming</p>
-            </div>
-          </div>
-          <p class="text-xs text-slate-300">Strong theoretical and hands-on command over procedural, OOP, and functional paradigms.</p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">JavaScript (ES6+)</span>
-            <span class="tech-pill">Java</span>
-            <span class="tech-pill">C</span>
-            <span class="tech-pill">HTML5</span>
-            <span class="tech-pill">CSS3</span>
-            <span class="tech-pill">SQL</span>
-          </div>
-        </div>
-
-        <!-- Category 2: Frameworks & Libraries -->
-        <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-indigo-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 flex items-center justify-center">
-              <i data-lucide="layers" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-white font-display">Frameworks &amp; Web</h3>
-              <p class="text-xs text-slate-400 font-mono">Modern Application Stack</p>
-            </div>
-          </div>
-          <p class="text-xs text-slate-300">Building reactive, high-performance UIs and scalable microservices.</p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="tech-pill">React 19</span>
-            <span class="tech-pill">FastAPI</span>
-            <span class="tech-pill">Node.js</span>
-            <span class="tech-pill">Express.js</span>
-            <span class="tech-pill">Tailwind CSS</span>
-            <span class="tech-pill">Socket.io</span>
-            <span class="tech-pill">Monaco Editor</span>
-          </div>
-        </div>
-
-        <!-- Category 3: AI & Machine Learning -->
-        <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-purple-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center">
-              <i data-lucide="brain-circuit" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-white font-display">AI &amp; Workflows</h3>
-              <p class="text-xs text-slate-400 font-mono">Agentic &amp; Model Integration</p>
-            </div>
-          </div>
-          <p class="text-xs text-slate-300">Integrating high-throughput inference APIs, prompt systems, and computer vision OCR.</p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="tech-pill">Groq LLM (Llama 3)</span>
-            <span class="tech-pill">Google Gemini API</span>
-            <span class="tech-pill">EasyOCR</span>
-            <span class="tech-pill">BeautifulSoup4</span>
-            <span class="tech-pill">ReportLab (PDF)</span>
-            <span class="tech-pill">VirusTotal API</span>
-          </div>
-        </div>
-
-        <!-- Category 4: Databases -->
-        <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-emerald-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
-              <i data-lucide="database" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-white font-display">Databases &amp; Storage</h3>
-              <p class="text-xs text-slate-400 font-mono">Data Persistence &amp; Schemas</p>
-            </div>
-          </div>
-          <p class="text-xs text-slate-300">Relational and document storage with robust indexing, ACID compliance, and connection pooling.</p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="tech-pill">MongoDB Atlas</span>
-            <span class="tech-pill">PostgreSQL</span>
-            <span class="tech-pill">MySQL</span>
-            <span class="tech-pill">Mongoose</span>
-            <span class="tech-pill">SQLAlchemy</span>
-          </div>
-        </div>
-
-        <!-- Category 5: Core Engineering Concepts -->
-        <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-amber-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center">
-              <i data-lucide="binary" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-white font-display">Core Concepts</h3>
-              <p class="text-xs text-slate-400 font-mono">Computer Science Foundations</p>
-            </div>
-          </div>
-          <p class="text-xs text-slate-300">Strong theoretical grounding validated through top NPTEL certification percentiles.</p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="tech-pill">Data Structures &amp; Algorithms</span>
-            <span class="tech-pill">Object-Oriented Programming</span>
-            <span class="tech-pill">RESTful API Design</span>
-            <span class="tech-pill">JWT Authentication</span>
-            <span class="tech-pill">Cybersecurity</span>
-          </div>
-        </div>
-
-        <!-- Category 6: Tools & Cloud Deployment -->
-        <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-rose-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 flex items-center justify-center">
-              <i data-lucide="cloud" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg text-white font-display">Tools &amp; Cloud</h3>
-              <p class="text-xs text-slate-400 font-mono">DevOps &amp; Extensions</p>
-            </div>
-          </div>
-          <p class="text-xs text-slate-300">Modern tooling for streamlined local development and seamless cloud deployments.</p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="tech-pill">Git</span>
-            <span class="tech-pill">GitHub</span>
-            <span class="tech-pill">VS Code</span>
-            <span class="tech-pill">Vercel</span>
-            <span class="tech-pill">Render</span>
-            <span class="tech-pill">Postman</span>
-            <span class="tech-pill">Chrome Extensions (V3)</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Certifications & Training Section -->
-  <section id="certifications" class="relative z-10 py-24 bg-slate-900/40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider">
-          <i data-lucide="award" class="w-3.5 h-3.5"></i> Verified Credentials
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
-          Certifications &amp; <span class="text-gradient">Training</span>
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Academic honors and verified specialized credentials from premier technical institutions.
-        </p>
-      </div>
-
-      <!-- Certifications Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Cert 1: Java (NPTEL 86%) -->
-        <div class="glass-panel p-6 rounded-2xl space-y-3 border-cyan-500/30">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-              Score: 86%
-            </span>
-            <i data-lucide="award" class="w-6 h-6 text-cyan-400"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white font-display">Programming in Java</h3>
-          <p class="text-xs text-cyan-400 font-semibold">NPTEL (IIT Kharagpur / Ministry of Education)</p>
-          <p class="text-xs text-slate-300">Covered object-oriented programming, multithreading, collections framework, exception handling, and Java I/O streams.</p>
-        </div>
-
-        <!-- Cert 2: Python for Data Science (NPTEL Elite + Silver 82%) -->
-        <div class="glass-panel p-6 rounded-2xl space-y-3 border-emerald-500/30">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-              Elite + Silver (82%)
-            </span>
-            <i data-lucide="award" class="w-6 h-6 text-emerald-400"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white font-display">Python for Data Science</h3>
-          <p class="text-xs text-emerald-400 font-semibold">NPTEL (IIT Madras / Ministry of Education)</p>
-          <p class="text-xs text-slate-300">Earned Elite + Silver medal ranking. Applied Python for data processing, pandas, numpy, and computational analysis.</p>
-        </div>
-
-        <!-- Cert 3: Problem Solving through C (NPTEL Elite) -->
-        <div class="glass-panel p-6 rounded-2xl space-y-3 border-indigo-500/30">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-              Elite Honor
-            </span>
-            <i data-lucide="award" class="w-6 h-6 text-indigo-400"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white font-display">Problem Solving through C</h3>
-          <p class="text-xs text-indigo-400 font-semibold">NPTEL (IIT Kharagpur)</p>
-          <p class="text-xs text-slate-300">Rigorous algorithm formulation, memory pointer arithmetic, recursion, and low-level computational optimization.</p>
-        </div>
-
-        <!-- Cert 4: Supraja Cybersecurity Excellence -->
-        <div class="glass-panel p-6 rounded-2xl space-y-3 border-rose-500/30">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">
-              Specialized
-            </span>
-            <img src="assets/supraja.png" alt="Supraja Logo" class="h-6 object-contain opacity-90">
-          </div>
-          <h3 class="text-lg font-bold text-white font-display">Cybersecurity Excellence</h3>
-          <p class="text-xs text-rose-400 font-semibold">Supraja Technologies</p>
-          <p class="text-xs text-slate-300">Comprehensive hands-on workshop covering digital forensics, network vulnerability assessment, and threat mitigation.</p>
-        </div>
-
-        <!-- Training 5: Digital Marketing -->
-        <div class="glass-panel p-6 rounded-2xl space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-white/10 text-slate-300">
-              Professional Training
-            </span>
-            <i data-lucide="trending-up" class="w-5 h-5 text-amber-400"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white font-display">Digital Marketing</h3>
-          <p class="text-xs text-amber-400 font-semibold">Infosys Springboard</p>
-          <p class="text-xs text-slate-300">SEO strategies, web traffic analytics, content distribution optimization, and digital conversion funnels.</p>
-        </div>
-
-        <!-- Training 6: Build Responsive Websites -->
-        <div class="glass-panel p-6 rounded-2xl space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-white/10 text-slate-300">
-              Frontend Training
-            </span>
-            <i data-lucide="layout" class="w-5 h-5 text-purple-400"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white font-display">Build Responsive Websites</h3>
-          <p class="text-xs text-purple-400 font-semibold">Udemy &amp; Intellipaat</p>
-          <p class="text-xs text-slate-300">Mobile-first fluid layouts, CSS Grid, media queries, flexbox engineering, and Advanced Data Science fundamentals.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="relative z-10 py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider">
-          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i> Academic Foundations
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
-          Education <span class="text-gradient">Timeline</span>
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Formal academic training in computer science, software engineering, and analytical problem solving.
-        </p>
-      </div>
-
-      <div class="max-w-3xl mx-auto space-y-8">
-        
-        <!-- Degree: Ramco Institute of Technology -->
-        <div class="glass-panel p-6 sm:p-8 rounded-2xl relative overflow-hidden group hover:border-cyan-500/50 transition-all">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
-            <div>
-              <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 mb-2">
-                UNDERGRADUATE DEGREE
-              </span>
-              <h3 class="text-xl sm:text-2xl font-bold font-display text-white">
-                B.E. in Computer Science and Engineering
-              </h3>
-              <p class="text-cyan-400 font-semibold text-sm">
-                Ramco Institute of Technology <span class="text-slate-400 font-normal">• Rajapalayam, India</span>
-              </p>
-            </div>
-            <div class="text-right">
-              <span class="text-xs font-mono text-slate-400 block">2023 – 2027</span>
-              <span class="text-lg font-bold font-display text-emerald-400">CGPA: 7.35 / 10.0</span>
-            </div>
-          </div>
-          <p class="text-slate-300 text-sm mt-4 leading-relaxed">
-            Curriculum encompasses Data Structures &amp; Algorithms, Database Management Systems (DBMS), Operating Systems, Computer Networks, Object-Oriented Software Design, Machine Learning, and Artificial Intelligence workflows.
-          </p>
-        </div>
-
-        <!-- High School: Veveaham -->
-        <div class="glass-panel p-6 sm:p-8 rounded-2xl relative overflow-hidden group hover:border-indigo-500/50 transition-all">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
-            <div>
-              <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-2">
-                HIGHER SECONDARY (CLASS XII)
-              </span>
-              <h3 class="text-xl sm:text-2xl font-bold font-display text-white">
-                Higher Secondary Certificate (HSC)
-              </h3>
-              <p class="text-indigo-400 font-semibold text-sm">
-                Veveaham Mat Hr Sec School <span class="text-slate-400 font-normal">• Rajapalayam, India</span>
-              </p>
-            </div>
-            <div class="text-right">
-              <span class="text-xs font-mono text-slate-400 block">Passed 2023</span>
-              <span class="text-lg font-bold font-display text-emerald-400">Score: 80.01%</span>
-            </div>
-          </div>
-          <p class="text-slate-300 text-sm mt-4 leading-relaxed">
-            Completed higher secondary education with a rigorous focus on Mathematics, Physics, Chemistry, and Computer Science fundamentals.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Interactive Contact Section -->
-  <section id="contact" class="relative z-10 py-24 bg-slate-900/40 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider">
-          <i data-lucide="send" class="w-3.5 h-3.5"></i> Get In Touch
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
-          Let's Build Something <span class="text-gradient">Impactful</span>
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Open for software engineering internships, AI developer roles, technical collaborations, and freelance projects.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-6xl mx-auto">
-        
-        <!-- Left: Contact Information Cards -->
-        <div class="lg:col-span-5 space-y-6">
-          
-          <div class="glass-panel p-6 rounded-2xl space-y-4">
-            <h3 class="text-xl font-bold font-display text-white">Direct Communication</h3>
-            <p class="text-xs text-slate-400">Feel free to reach out directly via email, phone, or messaging platforms.</p>
-
-            <div class="space-y-4 pt-2">
-              
-              <!-- Email Card -->
-              <div class="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.03] border border-white/5 hover:border-cyan-500/40 transition-colors">
-                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
-                  <i data-lucide="mail" class="w-5 h-5"></i>
-                </div>
-                <div class="overflow-hidden flex-1">
-                  <p class="text-[11px] font-mono text-slate-400 uppercase">Email Address</p>
-                  <a href="mailto:praveenkumar63811@gmail.com" class="text-xs sm:text-sm text-white font-medium hover:text-cyan-400 truncate block">
-                    praveenkumar63811@gmail.com
-                  </a>
-                </div>
-                <button id="copy-email-btn" class="p-2 text-slate-400 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-colors" title="Copy Email">
-                  <i data-lucide="copy" class="w-4 h-4"></i>
-                </button>
-              </div>
-
-              <!-- Phone Card -->
-              <div class="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.03] border border-white/5 hover:border-emerald-500/40 transition-colors">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
-                  <i data-lucide="phone" class="w-5 h-5"></i>
-                </div>
-                <div class="overflow-hidden flex-1">
-                  <p class="text-[11px] font-mono text-slate-400 uppercase">Phone &amp; WhatsApp</p>
-                  <a href="tel:+916381162006" class="text-xs sm:text-sm text-white font-medium hover:text-emerald-400 block font-mono">
-                    +91 6381162006
-                  </a>
-                </div>
-                <a href="https://wa.me/916381162006" target="_blank" rel="noopener noreferrer" class="p-2 text-slate-400 hover:text-emerald-400 hover:bg-white/5 rounded-lg transition-colors" title="Chat on WhatsApp">
-                  <i data-lucide="message-square" class="w-4 h-4"></i>
-                </a>
-              </div>
-
-              <!-- Location Card -->
-              <div class="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center shrink-0">
-                  <i data-lucide="map-pin" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <p class="text-[11px] font-mono text-slate-400 uppercase">Location</p>
-                  <p class="text-xs sm:text-sm text-white font-medium">Rajapalayam / Puliyangudi, Tamil Nadu, India</p>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Social Links Row -->
-            <div class="pt-4 border-t border-white/10 flex items-center gap-3">
-              <a href="https://github.com/Praveen137-cloud" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
-                <i data-lucide="github" class="w-4 h-4"></i> GitHub
-              </a>
-              <a href="https://linkedin.com/in/praveen-kumar" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-300 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
-                <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right: Interactive Working Contact Form -->
-        <div class="lg:col-span-7 glass-panel p-8 rounded-2xl">
-          <h3 class="text-xl font-bold font-display text-white mb-2">Send a Direct Message</h3>
-          <p class="text-xs text-slate-400 mb-6">Fill in the fields below. Clicking send will automatically prepare an email formatted directly for Praveen.</p>
-
-          <form id="contact-form" class="space-y-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="space-y-1.5">
-                <label for="contact-name" class="text-xs font-mono text-slate-300">Your Name *</label>
-                <input type="text" id="contact-name" required placeholder="Alex Mercer" class="w-full px-4 py-3 rounded-xl bg-slate-950/60 border border-white/10 text-white text-sm focus:border-cyan-500 focus:outline-none transition-colors">
-              </div>
-
-              <div class="space-y-1.5">
-                <label for="contact-email" class="text-xs font-mono text-slate-300">Your Email *</label>
-                <input type="email" id="contact-email" required placeholder="alex@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-950/60 border border-white/10 text-white text-sm focus:border-cyan-500 focus:outline-none transition-colors">
-              </div>
-            </div>
-
-            <div class="space-y-1.5">
-              <label for="contact-subject" class="text-xs font-mono text-slate-300">Subject / Role Opportunity</label>
-              <input type="text" id="contact-subject" placeholder="Full-Stack Developer Opportunity / Interview" class="w-full px-4 py-3 rounded-xl bg-slate-950/60 border border-white/10 text-white text-sm focus:border-cyan-500 focus:outline-none transition-colors">
-            </div>
-
-            <div class="space-y-1.5">
-              <label for="contact-message" class="text-xs font-mono text-slate-300">Your Message *</label>
-              <textarea id="contact-message" required rows="4" placeholder="Hi Praveen, we reviewed your projects (SEOAgent.ai, Pico) and would love to discuss an engineering role with our team..." class="w-full px-4 py-3 rounded-xl bg-slate-950/60 border border-white/10 text-white text-sm focus:border-cyan-500 focus:outline-none transition-colors"></textarea>
-            </div>
-
-            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm shadow-xl shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all flex items-center justify-center gap-2">
-              <i data-lucide="send" class="w-4 h-4"></i>
-              <span>Send Message</span>
+            <input id="form-subject" placeholder="Subject" class="contactInput" type="text" />
+            <textarea id="form-message" required rows="3" placeholder="Message" class="contactInput"></textarea>
+            <button type="submit" class="bg-[#68B2A0] hover:bg-[#5aa08f] py-3 md:py-4 px-10 rounded-lg text-slate-950 font-bold text-base transition-colors">
+              Submit
             </button>
           </form>
+
         </div>
 
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="relative z-10 border-t border-white/10 bg-slate-950 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      
-      <div class="text-center sm:text-left space-y-1">
-        <a href="#" class="font-display font-bold text-lg text-white">
-          Praveen
-        </a>
-        <p class="text-xs text-slate-400">
-          Crafted with React 19, FastAPI, Groq LLM &amp; Modern Tailwind UI.
-        </p>
-      </div>
-
-      <div class="flex items-center gap-4 text-xs font-mono text-slate-400">
-        <span>&copy; 2026 Praveen Kumar R. All Rights Reserved.</span>
-        <a href="#hero" class="p-2 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-slate-400 hover:text-cyan-400 border border-white/10 transition-colors" title="Scroll to Top">
-          <i data-lucide="arrow-up" class="w-4 h-4"></i>
-        </a>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- Technical Deep Dive Modal -->
-  <div id="project-modal" class="fixed inset-0 z-50 modal-overlay hidden flex items-center justify-center p-4">
-    <div class="relative w-full max-w-2xl bg-slate-900 border border-cyan-500/40 rounded-2xl shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto space-y-6">
-      
-      <!-- Close Button -->
-      <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors" aria-label="Close modal">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-
-      <!-- Modal Header -->
-      <div class="space-y-1">
-        <span id="modal-badge" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-          Category
-        </span>
-        <h3 id="modal-title" class="text-2xl font-bold font-display text-white pt-1">
-          Project Title
-        </h3>
-        <p id="modal-subtitle" class="text-xs font-mono text-cyan-400">
-          Subtitle
-        </p>
-      </div>
-
-      <!-- Description -->
-      <p id="modal-desc" class="text-sm text-slate-300 leading-relaxed">
-        Description
-      </p>
-
-      <!-- Key Engineering Highlights -->
-      <div class="space-y-2">
-        <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider font-semibold">
-          Architecture &amp; Key Highlights
-        </h4>
-        <ul id="modal-highlights" class="space-y-2">
-          <!-- Filled by JS -->
-        </ul>
-      </div>
-
-      <!-- System Architecture ASCII Diagram -->
-      <div class="space-y-2">
-        <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider font-semibold">
-          Data Pipeline Architecture
-        </h4>
-        <pre id="modal-arch" class="p-4 rounded-xl bg-slate-950 border border-white/10 font-mono text-xs text-cyan-300 overflow-x-auto leading-normal"></pre>
-      </div>
-
-      <!-- Tech Stack Used -->
-      <div class="space-y-2">
-        <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider font-semibold">
-          Technologies
-        </h4>
-        <div id="modal-tech" class="flex flex-wrap gap-1.5">
-          <!-- Filled by JS -->
+    <!-- Floating Snap-to-Top Button (Mitchell Sparrow Footer) -->
+    <a href="#hero">
+      <footer class="sticky bottom-5 w-full cursor-pointer z-30">
+        <div class="flex items-center justify-center">
+          <div class="h-10 w-10 bg-[#68B2A0]/80 hover:bg-[#68B2A0] rounded-full flex items-center justify-center transition-all shadow-lg">
+            <i data-lucide="chevron-up" class="w-6 h-6 text-slate-950"></i>
+          </div>
         </div>
-      </div>
+      </footer>
+    </a>
 
-      <!-- Modal Footer Buttons -->
-      <div class="pt-4 border-t border-white/10 flex items-center justify-end gap-3">
-        <a id="modal-gh-link" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 text-xs font-semibold flex items-center gap-2">
-          <i data-lucide="github" class="w-4 h-4"></i> GitHub Code
-        </a>
-        <a id="modal-live-link" href="#" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-2 shadow-lg shadow-cyan-500/20">
-          <i data-lucide="external-link" class="w-4 h-4"></i> Launch Live Application
-        </a>
-      </div>
-
-    </div>
   </div>
 
-  <!-- Custom Logic Script -->
   <script src="script.js"></script>
 </body>
 </html>
