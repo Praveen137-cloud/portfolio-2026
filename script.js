@@ -206,8 +206,8 @@ function initProjectCarousel() {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         const slideWidth = carousel.clientWidth || window.innerWidth;
-        const currentIdx = Math.min(6, Math.max(1, Math.round(carousel.scrollLeft / slideWidth) + 1));
-        counterEl.textContent = `${currentIdx} / 6`;
+        const currentIdx = Math.min(4, Math.max(1, Math.round(carousel.scrollLeft / slideWidth) + 1));
+        counterEl.textContent = `${currentIdx} / 4`;
       }, 50);
     }, { passive: true });
   }
